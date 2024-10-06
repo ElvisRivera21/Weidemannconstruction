@@ -1,11 +1,11 @@
-// src/components/HeroSection.js
 import React from 'react';
 
 const HeroSection = () => {
     return (
         <div className="relative bg-black">
+            {/* Updated image path to reference the public folder correctly */}
             <img 
-                src="weidmann-construction/public/Weidmann Yellow Logo.svg" 
+                src="/Weidmann Yellow Logo.svg" 
                 alt="Construction background" 
                 className="absolute inset-0 object-cover w-full h-full opacity-50" 
             />
