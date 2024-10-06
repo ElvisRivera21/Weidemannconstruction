@@ -73,6 +73,17 @@ function Navbar() {
             >
               Get Started
             </Link>
+
+            <Link to="/services" className="text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500 py-2 md:py-0">
+  Services
+</Link>
+
+            <Link to="/portfolio" className="text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500 py-2 md:py-0">
+  Portfolio
+</Link>
+
+            
+
           </div>
         </div>
       </div>
