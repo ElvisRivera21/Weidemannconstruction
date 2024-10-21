@@ -5,12 +5,21 @@ const HeroSection = () => {
 
     return (
         <div 
-            className="relative bg-black min-h-screen flex items-center justify-center"
+            className="relative bg-black min-h-screen flex flex-col items-center justify-center"
             style={{ 
                 height: "100vh",
                 overflow: "hidden"
             }}
         >
+            {/* New container for the image, resized and positioned */}
+            <div className="relative w-full h-80 mb-8"> {/* Adjust the height as needed */}
+                <img 
+                    src="/landinglogo%201.0.png" // Ensure image path is correct
+                    alt="Landing Page Image"
+                    className="w-full h-full object-contain"  // 'object-contain' ensures the whole image fits
+                />
+            </div>
+
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4"
                     style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
@@ -29,8 +38,7 @@ const HeroSection = () => {
                 >
                     Get a Quote
                 </a>
-
-                {/* Image container */}
+                {/* Logo image */}
                 <div className="w-2/3 md:w-1/3">
                     <img 
                         src="/logo.png" 
