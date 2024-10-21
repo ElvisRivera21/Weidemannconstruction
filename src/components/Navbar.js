@@ -11,7 +11,12 @@ function Navbar() {
       <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-3">
-          <img src="/Weidmann Yellow Logo.svg" className="h-16" alt="Weidmann Yellow Logo" />
+         <img 
+    src="/logo.png" // Update this to reference the correct path from public folder
+    alt="Weidemann Yellow Logo" 
+    className="h-16" 
+/>
+
           <span className="text-2xl font-semibold" style={{ fontFamily: 'Cinzel, serif', color: goldColor }}>
             Weidemann Construction
           </span>
