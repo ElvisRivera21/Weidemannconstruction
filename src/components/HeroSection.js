@@ -39,13 +39,21 @@ const HeroSection = () => {
                     Get a Quote
                 </a>
                 {/* Logo image */}
-                <div className="w-2/3 md:w-1/3">
+                <div className="w-2/3 md:w-1/3 mb-8">
                     <img 
                         src="/logo.png" 
                         alt="Weidemann Construction Logo"
                         className="mx-auto"
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
+                </div>
+
+                {/* Autoplay Video */}
+                <div className="w-full flex justify-center">
+                    <video width="560" height="314" controls autoPlay muted loop>
+                        <source src="/landingpagevideo.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
