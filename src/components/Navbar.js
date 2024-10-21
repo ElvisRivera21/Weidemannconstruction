@@ -13,7 +13,7 @@ function Navbar() {
         <Link to="/" className="flex items-center space-x-3">
           <img src="/Weidmann Yellow Logo.svg" className="h-16" alt="Weidmann Yellow Logo" />
           <span className="text-2xl font-semibold" style={{ fontFamily: 'Cinzel, serif', color: goldColor }}>
-            Weidmann Construction
+            Weidemann Construction
           </span>
         </Link>
 

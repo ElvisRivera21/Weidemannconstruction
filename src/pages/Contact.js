@@ -72,13 +72,13 @@ const Contact = () => {
         <div className="mt-12 text-left">
           <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
           <p className="text-gray-700">
-            <strong>Phone:</strong> (123) 456-7890
+            <strong>Phone:</strong> (507) 313-8317
           </p>
           <p className="text-gray-700">
-            <strong>Email:</strong> contact@constructioncompany.com
+            <strong>Email:</strong> weidemann.kyle@icloud.com
           </p>
           <p className="text-gray-700">
-            <strong>Address:</strong> 1234 Construction Lane, Building City, CA 12345
+            <strong>Address:</strong>  La Crosse, WI 54601
           </p>
         </div>
       </div>

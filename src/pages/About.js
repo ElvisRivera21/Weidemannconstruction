@@ -10,7 +10,7 @@ const About = () => {
 
         {/* Description */}
         <p className="text-lg md:text-xl mb-8 text-gray-700">
-          At Weidmann Construction, we are dedicated to building high-quality, sustainable structures that meet the needs of our clients. With years of experience in the construction industry, our team is committed to delivering exceptional results on every project.
+          At Weidemann Construction, we are dedicated to building high-quality, sustainable structures that meet the needs of our clients. With years of experience in the construction industry, our team is committed to delivering exceptional results on every project.
         </p>
         <p className="text-lg md:text-xl mb-8 text-gray-700">
           Our mission is to provide innovative construction solutions while maintaining integrity, quality, and safety. We believe that communication and collaboration with our clients are key to achieving successful outcomes.

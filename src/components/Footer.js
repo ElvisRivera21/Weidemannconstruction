@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-8 md:mb-0 text-center md:text-left">
             <h3 className="text-3xl font-bold" style={{ fontFamily: 'Cinzel, serif', color: goldColor }}>
-              Weidmann Construction
+              Weidemann Construction
             </h3>
             <p className="mt-4" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
               Building your dreams with integrity and quality craftsmanship. Reach out to us for your next project!
@@ -93,7 +93,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center border-t border-gray-700 pt-6" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
-          © {new Date().getFullYear()} Weidmann Construction. All rights reserved.
+          © {new Date().getFullYear()} Weidemann Construction. All rights reserved.
           <br />
           Need a website? Connect with me on 
           <a
