@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
     const brightGoldColor = '#FFEB9C'; // Updated brighter gold color
-    const phoneNumber = 'tel:+1234567890'; // Replace with actual phone number
+    const phoneNumber = 'tel:+15073138317'; // Correct phone number format with tel: prefix
 
     return (
         <div 
@@ -33,9 +33,9 @@ const HeroSection = () => {
                     Quality construction services tailored to your needs.
                 </p>
 
-                {/* Updated "Get a Quote" Button */}
+                {/* Updated "Get a Quote" Button with Correct Phone Number */}
                 <a 
-                    href={15073138317} 
+                    href={phoneNumber} 
                     className="py-3 px-6 rounded-lg font-semibold transition-all duration-300 mb-8"
                     style={{
                         background: 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(235,201,117,1) 100%)',
