@@ -1,7 +1,8 @@
 import React from 'react';
 
 const HeroSection = () => {
-    const goldColor = '#FFD700'; // Bright gold color
+    const brightGoldColor = '#FFEB9C'; // Updated brighter gold color
+    const phoneNumber = 'tel:+1234567890'; // Replace with actual phone number
 
     return (
         <div 
@@ -22,22 +23,32 @@ const HeroSection = () => {
 
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4"
-                    style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
+                    style={{ fontFamily: 'Cinzel, serif', color: brightGoldColor }}
                 >
                     Build Your Dreams with Us
                 </h1>
                 <p className="text-lg md:text-xl mb-8"
-                   style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
+                   style={{ fontFamily: 'Merriweather, serif', color: brightGoldColor }}
                 >
                     Quality construction services tailored to your needs.
                 </p>
+
+                {/* Updated "Get a Quote" Button */}
                 <a 
-                    href="#contact" 
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition duration-300 mb-8"
-                    style={{ fontFamily: 'Merriweather, serif' }}
+                    href={15073138317} 
+                    className="py-3 px-6 rounded-lg font-semibold transition-all duration-300 mb-8"
+                    style={{
+                        background: 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(235,201,117,1) 100%)',
+                        color: '#000', // Set text color to black
+                        fontFamily: 'Merriweather, serif',
+                        boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+                    }}
+                    onMouseEnter={(e) => e.target.style.background = 'rgba(255, 215, 0, 0.8)'}
+                    onMouseLeave={(e) => e.target.style.background = 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(235,201,117,1) 100%)'}
                 >
                     Get a Quote
                 </a>
+
                 {/* Logo image */}
                 <div className="w-2/3 md:w-1/3 mb-8">
                     <img 
