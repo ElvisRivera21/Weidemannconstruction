@@ -22,12 +22,22 @@ const projects = [
 ];
 
 const Portfolio = () => {
+  const goldColor = '#FFEB9C'; // Gold accent color
+
   return (
-    <div className="bg-gray-100 py-16 px-4">
+    <div className="bg-black py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Projects</h2>
-        <p className="text-lg mb-12 text-gray-700">
+        <h2
+          className="text-3xl md:text-4xl font-bold mb-8"
+          style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
+        >
+          Our Projects
+        </h2>
+        <p
+          className="text-lg mb-12"
+          style={{ fontFamily: 'Merriweather, serif', color: 'white' }}
+        >
           Explore some of our recent construction projects that showcase our commitment to quality and craftsmanship.
         </p>
 
@@ -36,15 +46,25 @@ const Portfolio = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               {/* Project Image */}
               <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
               
               {/* Project Details */}
               <div className="p-6 text-left">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-700">{project.description}</p>
+                <h3
+                  className="text-xl font-semibold mb-2"
+                  style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
+                >
+                  {project.title}
+                </h3>
+                <p
+                  className="text-white"
+                  style={{ fontFamily: 'Merriweather, serif' }}
+                >
+                  {project.description}
+                </p>
               </div>
             </div>
           ))}
