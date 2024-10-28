@@ -33,6 +33,13 @@ const HeroSection = () => {
                     Quality construction services tailored to your needs.
                 </p>
 
+                {/* New tagline for serving areas */}
+                <p className="text-md md:text-lg mb-8"
+                   style={{ fontFamily: 'Merriweather, serif', color: brightGoldColor }}
+                >
+                    Proudly Serving La Crosse, Onalaska, Holmen, Winona and surrounding areas
+                </p>
+
                 {/* Updated "Get a Quote" Button to Send an Email */}
                 <a 
                     href={emailAddress} 

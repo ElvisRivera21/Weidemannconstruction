@@ -53,12 +53,19 @@ const ContactForm = () => {
       <div className="max-w-6xl mx-auto">
         {/* Form Title */}
         <h2
-          className="text-3xl md:text-4xl font-bold mb-8 text-center"
+          className="text-3xl md:text-4xl font-bold mb-4 text-center"
           style={{ fontFamily: 'Cinzel, serif', color: '#FFEB9C' }}
         >
           Contact Us
         </h2>
         
+        {/* Contact Information and Areas Served */}
+        <p className="text-lg text-center mb-8" style={{ fontFamily: 'Merriweather, serif', color: '#FFEB9C' }}>
+          Call us at <a href="tel:+16087991969" className="underline">608-799-1969</a> or email us at <a href="mailto:kyle@weidemannconstruction.com" className="underline">kyle@weidemannconstruction.com</a>.
+          <br />
+          Proudly serving La Crosse, Onalaska, Holmen, Winona, and surrounding areas.
+        </p>
+
         <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg shadow-lg">
           {/* Name Field */}
           <div className="mb-4">
