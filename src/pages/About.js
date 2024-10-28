@@ -32,7 +32,7 @@ const About = () => {
         {/* Images */}
         <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
           <img
-            src="photos/Aboutimage1.jpg"
+            src="photos/Tough Nails.png"
             alt="Construction site view 1"
             className="w-full md:w-1/3 rounded-lg shadow-lg object-contain h-auto max-h-96"
           />
