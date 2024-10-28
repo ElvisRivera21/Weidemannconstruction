@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'; // Removed FaTwitter, FaInstagram
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'; // Importing both Facebook and LinkedIn
 
 const Footer = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
@@ -14,7 +14,7 @@ const Footer = () => {
       className="text-white py-12"
     >
       <div className="max-w-6xl mx-auto px-4">
-        {/* Logo & Description Section (Green area) */}
+        {/* Logo & Description Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-8 md:mb-0 text-center md:text-left">
             <h3
@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links & Follow Us (Red area) */}
+          {/* Quick Links & Follow Us */}
           <div
             className="text-center md:text-left mb-8 md:mb-0"
             style={{ backgroundColor: blackColor, padding: '1rem', borderRadius: '8px' }}
@@ -105,14 +105,6 @@ const Footer = () => {
                 style={{ color: goldColor }}
               >
                 <FaFacebookF size={24} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/therealelvis/"
-                className="hover:text-blue-500 transition"
-                aria-label="LinkedIn"
-                style={{ color: goldColor }}
-              >
-                <FaLinkedinIn size={24} />
               </a>
             </div>
           </div>
