@@ -99,7 +99,7 @@ const Footer = () => {
             </h4>
             <div className="flex justify-center md:justify-start space-x-4">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/WeidemannConstruction"
                 className="hover:text-blue-500 transition"
                 aria-label="Facebook"
                 style={{ color: goldColor }}
