@@ -1,32 +1,34 @@
-// Import dependencies
 const express = require('express');
+const cors = require('cors');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-// Initialize Express app
 const app = express();
+
+// Allow CORS for your frontend
+app.use(cors({
+  origin: 'https://weidemannconstruction.vercel.app' // Replace with your frontend domain
+}));
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Route to handle form submissions
+// Your send-email route
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, budget, startDate, city, message } = req.body;
 
   try {
-    // Nodemailer configuration
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,  // Your email from .env
-        pass: process.env.EMAIL_PASS,  // Your app password from .env
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Set up email options
     let mailOptions = {
-      from: email,  // Customer's email
-      to: 'kyle@weidemannconstruction.com',  // Your recipient email
+      from: email,
+      to: 'kyle@weidemannconstruction.com',
       subject: 'New Quote Request',
       text: `
         Name: ${name}
@@ -39,7 +41,6 @@ app.post('/send-email', async (req, res) => {
       `,
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
