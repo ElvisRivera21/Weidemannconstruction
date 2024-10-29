@@ -5,9 +5,11 @@ require('dotenv').config();
 
 const app = express();
 
-// Allow CORS for your frontend
+// CORS configuration
 app.use(cors({
-  origin: 'https://weidemannconstruction.vercel.app' // Replace with your frontend domain
+  origin: 'https://weidemannconstruction.vercel.app', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Middleware to parse JSON bodies
