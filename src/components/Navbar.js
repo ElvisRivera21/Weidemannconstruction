@@ -39,7 +39,7 @@ function Navbar() {
         >
           <div className="flex flex-col md:flex-row md:space-x-4 mt-2 md:mt-0">
             {/* Link Items */}
-            {['/', '/about', '/services', '/portfolio', '/contact'].map((path, index) => (
+            {['/', '/about', '/services','/contact'].map((path, index) => (
               <Link
                 key={index}
                 to={path}

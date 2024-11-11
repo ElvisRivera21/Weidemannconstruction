@@ -4,22 +4,25 @@ import { FaHammer, FaHardHat, FaTruckMoving } from 'react-icons/fa'; // Import i
 const Services = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
 
-  // Define service data with icons, titles, and descriptions
+  // Define service data with icons, titles, descriptions, and images
   const services = [
     {
       icon: <FaHammer size={40} className="text-[#FFEB9C] mb-4" />,
       title: 'Residential Construction',
       description: 'From custom homes to renovations, we provide quality residential construction services tailored to your needs.',
+      image: '/photos/ResidentialServices/ResedentialServicesCover.png', // Add your image path here
     },
     {
       icon: <FaHardHat size={40} className="text-[#FFEB9C] mb-4" />,
-      title: 'Commercial Construction',
-      description: 'Our commercial services include office buildings, retail spaces, and other business infrastructure projects.',
+      title: 'Garage Construction',
+      description: 'Our garage services include detatched buildings, residential projects, and other business infrastructure projects.',
+        image: '/photos/GarageServices/GarageServicesCover.png',
     },
     {
       icon: <FaTruckMoving size={40} className="text-[#FFEB9C] mb-4" />,
       title: 'Project Management',
       description: 'We offer comprehensive project management services to ensure your project is completed on time and on budget.',
+     image: '/photos/ProjectMangement/ProjectManagementCover.png',
     },
   ];
 
@@ -43,6 +46,14 @@ const Services = () => {
               className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex flex-col items-center">
+                {/* Display Image for Residential Service */}
+                {service.image && (
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                  />
+                )}
                 {/* Service Icon */}
                 {service.icon}
                 {/* Service Title */}
