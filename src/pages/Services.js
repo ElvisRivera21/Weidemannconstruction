@@ -1,28 +1,33 @@
 import React from 'react';
 import { FaHammer, FaHardHat, FaTruckMoving } from 'react-icons/fa'; // Import icons for services
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
+  const navigate = useNavigate();
 
-  // Define service data with icons, titles, descriptions, and images
+  // Define service data with icons, titles, descriptions, images, and routes
   const services = [
     {
       icon: <FaHammer size={40} className="text-[#FFEB9C] mb-4" />,
       title: 'Residential Construction',
       description: 'From custom homes to renovations, we provide quality residential construction services tailored to your needs.',
-      image: '/photos/ResidentialServices/ResedentialServicesCover.png', // Add your image path here
+      image: '/photos/ResidentialServices/ResedentialServicesCover.png',
+      route: '/gallery/residential', // Add the route path for the residential gallery
     },
     {
       icon: <FaHardHat size={40} className="text-[#FFEB9C] mb-4" />,
       title: 'Garage Construction',
-      description: 'Our garage services include detatched buildings, residential projects, and other business infrastructure projects.',
-        image: '/photos/GarageServices/GarageServicesCover.png',
+      description: 'Our garage services include detached buildings, residential projects, and other business infrastructure projects.',
+      image: '/photos/GarageServices/GarageServicesCover.png',
+      route: '/gallery/garage', // Route path for the garage gallery
     },
     {
       icon: <FaTruckMoving size={40} className="text-[#FFEB9C] mb-4" />,
       title: 'Project Management',
       description: 'We offer comprehensive project management services to ensure your project is completed on time and on budget.',
-     image: '/photos/ProjectMangement/ProjectManagementCover.png',
+      image: '/photos/ProjectMangement/ProjectManagementCover.png',
+      route: '/gallery/project-management', // Route path for the project management gallery
     },
   ];
 
@@ -43,10 +48,11 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300"
+              onClick={() => navigate(service.route)}
+              className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
             >
               <div className="flex flex-col items-center">
-                {/* Display Image for Residential Service */}
+                {/* Display Image */}
                 {service.image && (
                   <img
                     src={service.image}

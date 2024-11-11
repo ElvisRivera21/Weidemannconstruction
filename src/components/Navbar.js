@@ -19,7 +19,7 @@ function Navbar() {
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-3">
           <img
-            src="photos/Weidemann Construction2.0-2.png" // Update this to reference the correct path from public folder
+            src="/photos/Weidemann Construction2.0-2.png" // Update this to reference the correct path from public folder
             alt="Weidemann Yellow Logo"
             className="h-16"
           />
