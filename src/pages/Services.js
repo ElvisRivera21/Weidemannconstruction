@@ -10,38 +10,71 @@ const Services = () => {
   const services = [
     {
       icon: <FaHammer size={40} className="text-[#FFEB9C] mb-4" />,
-      title: 'Residential Construction',
+      title: 'New Construction',
       description: 'From custom homes to renovations, we provide quality residential construction services tailored to your needs.',
       image: '/photos/ResidentialServices/ResedentialServicesCover.png',
       route: '/gallery/residential', // Add the route path for the residential gallery
     },
     {
       icon: <FaHardHat size={40} className="text-[#FFEB9C] mb-4" />,
-      title: 'Garage Construction',
+      title: 'Exterior Finishes',
       description: 'Our garage services include detached buildings, residential projects, and other business infrastructure projects.',
       image: '/photos/GarageServices/GarageServicesCover.png',
       route: '/gallery/garage', // Route path for the garage gallery
     },
     {
       icon: <FaTruckMoving size={40} className="text-[#FFEB9C] mb-4" />,
-      title: 'Project Management',
+      title: 'Kitchens',
       description: 'We offer comprehensive project management services to ensure your project is completed on time and on budget.',
       image: '/photos/ProjectMangement/ProjectManagementCover.png',
       route: '/gallery/project-management', // Route path for the project management gallery
     },
   ];
 
+  // Additional services list
+  const additionalServices = [
+    "New construction",
+    "Remodeling",
+    "Additions",
+    "Kitchens",
+    "Bathrooms",
+    "Framing",
+    "Siding",
+    "Decks and pergolas",
+    "Garages"
+  ];
+
   return (
     <div className="bg-black py-16 px-4">
       {/* Container for the content */}
       <div className="max-w-6xl mx-auto text-center">
+
+        {/* Grid Layout for Additional Services */}
+        <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mb-8">
+          {additionalServices.map((service, index) => (
+            <div
+              key={index}
+              className="bg-[#FFEB9C] text-black font-semibold py-2 px-4 rounded-md shadow-md"
+              style={{ fontFamily: 'Merriweather, serif' }}
+            >
+              {service}
+            </div>
+          ))}
+        </div>
+
         {/* Section Title */}
         <h2
-          className="text-3xl md:text-4xl font-bold mb-8"
+          className="text-3xl md:text-4xl font-bold mb-4"
           style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
         >
           Our Services
         </h2>
+
+        {/* Introductory Text */}
+        <p className="text-white text-lg mb-8" style={{ fontFamily: 'Merriweather, serif' }}>
+          Weidemann Construction – experts in craftsmanship – provides services for many residential needs,
+          including architectural plans and designs for your project, as well as general contracting.
+        </p>
 
         {/* Grid Layout for Services */}
         <div className="grid gap-8 md:grid-cols-3">
