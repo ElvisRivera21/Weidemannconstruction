@@ -7,7 +7,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: 'https://weidemannconstruction.vercel.app', // Your frontend URL
+  origin: 'https://your-frontend-url', // Replace with your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
@@ -15,7 +15,7 @@ app.use(cors({
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Your send-email route
+// Email route
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, budget, startDate, city, message } = req.body;
 
@@ -23,8 +23,8 @@ app.post('/send-email', async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, // Use your Gmail address
+        pass: process.env.EMAIL_PASS, // Use your Gmail app password
       },
     });
 
