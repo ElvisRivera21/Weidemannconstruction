@@ -5,6 +5,7 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
+    projectType: '',
     budget: '',
     startDate: '',
     city: '',
@@ -34,6 +35,7 @@ const ContactForm = () => {
           name: '',
           email: '',
           phone: '',
+          projectType: '',
           budget: '',
           startDate: '',
           city: '',
@@ -51,10 +53,16 @@ const ContactForm = () => {
   return (
     <div className="bg-black py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: 'Cinzel, serif', color: '#FFEB9C' }}>
+        <h2
+          className="text-3xl md:text-4xl font-bold mb-4 text-center"
+          style={{ fontFamily: 'Cinzel, serif', color: '#FFEB9C' }}
+        >
           Contact Us
         </h2>
-        <p className="text-lg text-center mb-8" style={{ fontFamily: 'Merriweather, serif', color: '#FFEB9C' }}>
+        <p
+          className="text-lg text-center mb-8"
+          style={{ fontFamily: 'Merriweather, serif', color: '#FFEB9C' }}
+        >
           Call us at <a href="tel:+16087991969" className="underline">608-799-1969</a> or email us at <a href="mailto:kyle@weidemannconstruction.com" className="underline">kyle@weidemannconstruction.com</a>.
           <br />
           Proudly serving La Crosse, Onalaska, Holmen, Winona, and surrounding areas.
@@ -63,7 +71,7 @@ const ContactForm = () => {
           {/* Name Field */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="name">
-              Name
+              Full Name
             </label>
             <input
               type="text"
@@ -73,10 +81,65 @@ const ContactForm = () => {
               onChange={handleChange}
               required
               className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter your full name"
             />
           </div>
 
-          {/* Add other fields similarly */}
+          {/* Email Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="email">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter your email address"
+            />
+          </div>
+
+          {/* Phone Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="phone">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          {/* Project Type Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="projectType">
+              Type of Project
+            </label>
+            <select
+              id="projectType"
+              name="projectType"
+              value={formData.projectType}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+            >
+              <option value="" disabled>Select a project type</option>
+              <option value="new_construction">New Construction</option>
+              <option value="renovation">Renovation</option>
+              <option value="remodeling">Remodeling</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
           {/* Budget Field */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="budget">
@@ -90,13 +153,47 @@ const ContactForm = () => {
               onChange={handleChange}
               required
               className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter your budget (e.g., $50,000)"
+            />
+          </div>
+
+          {/* Preferred Start Date Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="startDate">
+              Preferred Start Date
+            </label>
+            <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              value={formData.startDate}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+            />
+          </div>
+
+          {/* City Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="city">
+              City
+            </label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter the city for the project"
             />
           </div>
 
           {/* Message Field */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="message">
-              Message
+              Additional Details
             </label>
             <textarea
               id="message"
@@ -106,7 +203,8 @@ const ContactForm = () => {
               rows="4"
               required
               className="w-full p-2 border border-gray-300 rounded-md"
-            />
+              placeholder="Provide additional details about your project"
+            ></textarea>
           </div>
 
           {/* Submit Button */}
