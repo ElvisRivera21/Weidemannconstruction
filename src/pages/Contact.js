@@ -18,37 +18,38 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
+  try {
     const response = await fetch('http://localhost:5000/send-email', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData),
-});
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-
-      if (response.ok) {
-        alert('Your message has been sent successfully!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          projectType: '',
-          budget: '',
-          startDate: '',
-          city: '',
-          message: '',
-        });
-      } else {
-        alert('Failed to send the message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error. Please try again later.');
+    if (response.ok) {
+      alert('Your message has been sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        projectType: '',
+        budget: '',
+        startDate: '',
+        city: '',
+        message: '',
+      });
+    } else {
+      alert('Failed to send the message. Please try again.');
     }
-  };
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('There was an error. Please try again later.');
+  }
+};
+
 
   return (
     <div className="bg-black py-16 px-4">

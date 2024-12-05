@@ -21,16 +21,19 @@ app.post('/send-email', async (req, res) => {
 
   try {
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER, // Use your Gmail address
-        pass: process.env.EMAIL_PASS, // Use your Gmail app password
-      },
-    });
+  host: 'smtp.mail.me.com', // iCloud's SMTP server
+  port: 587,               // SMTP port
+  secure: false,           // Use TLS (secure: false for port 587)
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
 
     let mailOptions = {
-      from: email,
-      to: 'kyle@weidemannconstruction.com',
+      from: process.env.EMAIL_USER,
+      to: 'kyle@weidemannconstruction.com', // Replace with your recipient's email
       subject: 'New Quote Request',
       text: `
         Name: ${name}
@@ -46,8 +49,8 @@ app.post('/send-email', async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ error: 'Error sending email' });
+    console.error('Error sending email:', error); // Log the full error
+    res.status(500).json({ error: 'Error sending email', details: error.message });
   }
 });
 
