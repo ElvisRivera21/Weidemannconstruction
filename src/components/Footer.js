@@ -71,13 +71,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link
-                  to="/portfolio"
-                  className="hover:text-blue-500 transition"
-                  style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-                >
-                  Portfolio
-                </Link>
+                
               </li>
               <li>
                 <Link
