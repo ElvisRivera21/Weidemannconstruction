@@ -5,16 +5,16 @@ const ResidentialGallery = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
   const modalGoldColor = '#FFC107'; // Slightly darker gold for readability
 
-  // Array of images and their corresponding text for the residential gallery
   const images = [
-  
-    
     { src: '/photos/ResidentialServices/GreenOne.png', text: 'Green Garage, General Contracting' },
     { src: '/photos/ResidentialServices/GreenTwo.png', text: 'Siding, Roofs, Doors, Electrical, Plumbing' },
- 
+    { src: '/photos/Weedy.png', text: 'Weedy' },
     { src: '/photos/ResidentialServices/RedThree.png', text: 'Traditional Red Finish' },
-    { src: '/photos/ResidentialServices/SnowOne.png', text: 'Framing in The Snow' },
-    { src: '/photos/ResidentialServices/StoneTwo.png', text: 'Exterior Finishes' },
+    { src: '/photos/ResidentialServices/Trusspic.png', text: 'Custom Home' },
+    { src: '/photos/ResidentialServices/Generalcontracting.png', text: 'Custom Home' },
+    { src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Custom Home' },
+    { src: '/photos/ResidentialServices/NewConstruction2.png', text: 'Custom Home' },
+       {src: '/photos/ResidentialServices/NewConstruction3.png', text: 'Custom Home'},
   ];
 
   return (
@@ -43,7 +43,7 @@ const ResidentialGallery = () => {
               <img
                 src={src}
                 alt={text}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-contain" // Show entire image
               />
               <p className="text-sm mt-2" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
                 {text}
@@ -60,7 +60,7 @@ const ResidentialGallery = () => {
             <img
               src={selectedImage.src}
               alt={selectedImage.text}
-              className="w-full rounded-lg"
+              className="w-full rounded-lg object-contain" // Show entire image
             />
             <p
               className="text-lg mt-4"

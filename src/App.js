@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import ResidentialGallery from './galleries/ResidentialGallery';
+import NewConstruction from './galleries/NewConstruction'; // Updated import
 import GarageGallery from './galleries/GarageGallery';
 import ProjectManagementGallery from './galleries/ProjectManagementGallery';
 
@@ -22,7 +22,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           {/* Add gallery routes */}
-          <Route path="/gallery/residential" element={<ResidentialGallery />} />
+          <Route path="/gallery/residential" element={<NewConstruction />} /> {/* Updated component */}
           <Route path="/gallery/garage" element={<GarageGallery />} />
           <Route path="/gallery/project-management" element={<ProjectManagementGallery />} />
         </Routes>
