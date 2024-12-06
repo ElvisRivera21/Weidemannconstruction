@@ -7,12 +7,11 @@ const ResidentialGallery = () => {
 
   // Array of images and their corresponding text for the residential gallery
   const images = [
-    { src: '/photos/ResidentialServices/BrownOne.png', text: 'Decks and Covered Decks' },
-    { src: '/photos/ResidentialServices/BrownTwo.png', text: 'Screened Porch' },
+  
+    
     { src: '/photos/ResidentialServices/GreenOne.png', text: 'Green Garage, General Contracting' },
     { src: '/photos/ResidentialServices/GreenTwo.png', text: 'Siding, Roofs, Doors, Electrical, Plumbing' },
-    { src: '/photos/ResidentialServices/RedOne.png', text: 'Covered Porch' },
-    { src: '/photos/ResidentialServices/RedTwo.png', text: 'Soffit and Fascia' },
+ 
     { src: '/photos/ResidentialServices/RedThree.png', text: 'Traditional Red Finish' },
     { src: '/photos/ResidentialServices/SnowOne.png', text: 'Framing in The Snow' },
     { src: '/photos/ResidentialServices/StoneTwo.png', text: 'Exterior Finishes' },

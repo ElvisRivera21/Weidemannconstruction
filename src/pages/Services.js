@@ -11,21 +11,26 @@ const Services = () => {
     {
       icon: <FaHammer size={40} className="text-[#FFEB9C] mb-4" />,
       title: 'New Construction',
-      description: 'From custom homes to renovations, we provide quality residential construction services tailored to your needs.',
+      description: 'We provide quality residential construction services tailored to your needs. From custom homes, to detached garages, and new buildings.',
       image: '/photos/ResidentialServices/ResedentialServicesCover.png',
       route: '/gallery/residential', // Add the route path for the residential gallery
     },
     {
       icon: <FaHardHat size={40} className="text-[#FFEB9C] mb-4" />,
-      title: 'Exterior Finishes',
-      description: 'Our garage services include detached buildings, residential projects, and other business infrastructure projects.',
+      title: (
+  <>
+    Additions & Porches
+    
+  </>
+),
+      description: 'Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms.we bring your vision to life while adding value to your home.',
       image: '/photos/GarageServices/GarageServicesCover.png',
       route: '/gallery/garage', // Route path for the garage gallery
     },
     {
       icon: <FaTruckMoving size={40} className="text-[#FFEB9C] mb-4" />,
-      title: 'Kitchens',
-      description: 'We offer comprehensive project management services to ensure your project is completed on time and on budget.',
+      title: 'Exteriors Finishes',
+      description: 'Transform your home with top-quality siding, soffit/fascia, windows. Durable stylish decks and pergolas that are built to last, because your home deserves the best.',
       image: '/photos/ProjectMangement/ProjectManagementCover.png',
       route: '/gallery/project-management', // Route path for the project management gallery
     },
@@ -33,15 +38,18 @@ const Services = () => {
 
   // Additional services list
   const additionalServices = [
-    "New construction",
+    "General Contracting",
+    "New Construction",
     "Remodeling",
     "Additions",
     "Kitchens",
     "Bathrooms",
     "Framing",
     "Siding",
-    "Decks and pergolas",
-    "Garages"
+    "Decks and Pergolas",
+    "Garages",
+    
+    
   ];
 
   return (

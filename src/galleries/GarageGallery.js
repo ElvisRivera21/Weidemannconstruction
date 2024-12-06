@@ -7,9 +7,7 @@ const GarageGallery = () => {
 
   // Array of images for the garage gallery
   const images = [
-    '/photos/GarageServices/image1.jpg',
-    '/photos/GarageServices/image2.jpg',
-    '/photos/GarageServices/image3.jpg',
+     { src: '/photos/ResidentialServices/BrownOne.png', text: 'Decks and Covered Decks' },
     // Add more image paths here
   ];
 
