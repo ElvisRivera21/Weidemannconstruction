@@ -9,15 +9,16 @@ const GarageGallery = () => {
   const images = [
     { src: '/photos/AdditionsPorches/covered1.png', text: 'Covered Patios' },
     { src: '/photos/AdditionsPorches/covered2.png', text: 'Three-Season Porches' },
-    //{ src: '/photos/ResidentialServices/GeneralContracting.png', text: 'Room Additions' },
-    //{ src: '/photos/ResidentialServices/GreenOne.png', text: 'Custom Sunrooms' },
-    //{ src: '/photos/ResidentialServices/GreenTwo.png', text: 'Covered Patios' },
-    //{ src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Garage Additions' },
-    //{ src: '/photos/ResidentialServices/NewConstruction2.png', text: 'Custom Pergolas' },
-    //{ src: '/photos/ResidentialServices/RedOne.png', text: 'Extended Decks' },
-    //{ src: '/photos/ResidentialServices/RedTwo.png', text: 'Outdoor Living Spaces' },
-    //{ src: '/photos/ResidentialServices/RedThree.png', text: 'Attached Porches' },
-    //{ src: '/photos/ResidentialServices/SnowOne.png', text: 'Enclosed Patios' },
+    { src: '/photos/AdditionsPorches/alumDeck.png', text: 'Room Additions' },
+    { src: '/photos/AdditionsPorches/brownCovered1.png', text: 'Custom Sunrooms' },
+    { src: '/photos/AdditionsPorches/brownCovered2.png', text: 'Covered Patios' },
+    { src: '/photos/AdditionsPorches/greaterRoomAddition.png', text: 'Garage Additions' },
+    { src: '/photos/AdditionsPorches/greaterRoomAddition1.png', text: 'Custom Pergolas' },
+    { src: '/photos/AdditionsPorches/LeanRoof.png', text: 'Extended Decks' },
+    { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Outdoor Living Spaces' },
+    { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Attached Porches' },
+    { src: '/photos/AdditionsPorches/overPatio.png', text: 'Attached Porches' },
+    //{ src: '', text: 'Enclosed Patios' },
     //{ src: '/photos/ResidentialServices/StoneTwo.png', text: 'Multi-Season Rooms' }
   ];
 
