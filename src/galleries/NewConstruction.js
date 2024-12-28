@@ -6,10 +6,10 @@ const ResidentialGallery = () => {
   const modalGoldColor = '#FFC107'; // Slightly darker gold for readability
 
   const images = [
-    { src: '/photos/ResidentialServices/GreenOne.png', text: 'Green Garage, General Contracting' },
-    { src: '/photos/ResidentialServices/GreenTwo.png', text: 'Siding, Roofs, Doors, Electrical, Plumbing' },
+    { src: '/photos/ResidentialServices/GreenOne.png', text: 'Custom Garages' },
+    { src: '/photos/ResidentialServices/GreenTwo.png', text: 'Custom Garages' },
     { src: '/photos/Weedy.png', text: 'Weedy' },
-    { src: '/photos/ResidentialServices/RedThree.png', text: 'Traditional Red Finish' },
+    { src: '/photos/ResidentialServices/RedThree.png', text: 'Traditional Red Chicken Coop' },
     { src: '/photos/ResidentialServices/Trusspic.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/Generalcontracting.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Custom Home' },
@@ -24,7 +24,7 @@ const ResidentialGallery = () => {
           className="text-3xl md:text-4xl font-bold mb-8"
           style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
         >
-          Residential Construction Gallery
+          New Construction Gallery
         </h2>
         <p
           className="text-lg mb-8"
