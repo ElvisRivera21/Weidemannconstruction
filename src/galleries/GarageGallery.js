@@ -7,17 +7,17 @@ const GarageGallery = () => {
 
   // Array of images for the garage gallery
   const images = [
-    { src: '/photos/AdditionsPorches/covered1.png', text: 'Covered Patios' },
-    { src: '/photos/AdditionsPorches/covered2.png', text: 'Three-Season Porches' },
-    { src: '/photos/AdditionsPorches/alumDeck.png', text: 'Room Additions' },
-    { src: '/photos/AdditionsPorches/brownCovered1.png', text: 'Custom Sunrooms' },
-    { src: '/photos/AdditionsPorches/brownCovered2.png', text: 'Covered Patios' },
-    { src: '/photos/AdditionsPorches/greaterRoomAddition.png', text: 'Garage Additions' },
-    { src: '/photos/AdditionsPorches/greaterRoomAddition1.png', text: 'Custom Pergolas' },
-    { src: '/photos/AdditionsPorches/LeanRoof.png', text: 'Extended Decks' },
-    { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Outdoor Living Spaces' },
-    { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Attached Porches' },
-    { src: '/photos/AdditionsPorches/overPatio.png', text: 'Attached Porches' },
+    { src: '/photos/AdditionsPorches/covered1.png', text: 'Three Season Porch' },
+    { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
+    { src: '/photos/AdditionsPorches/alumDeck.png', text: 'Deck With Aluminum Railings' },
+    { src: '/photos/AdditionsPorches/brownCovered1.png', text: 'Covered Deck With Screened In Porch' },
+    { src: '/photos/AdditionsPorches/brownCovered2.png', text: 'Covered Deck With A Curved Overhang' },
+    { src: '/photos/AdditionsPorches/greaterRoomAddition.png', text: 'Great Room Addition Mid-Construction' },
+    { src: '/photos/AdditionsPorches/greaterRoomAddition1.png', text: 'Great Room Addition Before/After ' },
+    { src: '/photos/AdditionsPorches/LeanRoof.png', text: 'Lean-To Roof With Speakers & Lights' },
+    { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Covered Deck Mid-Construction' },
+    { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Three Season Room Mid-Construction' },
+    { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
     //{ src: '', text: 'Enclosed Patios' },
     //{ src: '/photos/ResidentialServices/StoneTwo.png', text: 'Multi-Season Rooms' }
   ];
