@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
   const location = useLocation();
   const brightGoldColor = '#FFEB9C'; // Brighter gold to make text pop
-  const hoverColor = '#FFD700'; // Slightly more golden color on hover
   const activeColor = '#FFFFFF'; // Brighter white for the active link
+
+  // Declare state for navbar toggle
+  const [navbarOpen, setNavbarOpen] = useState(false); // <-- Added this line
 
   return (
     <nav
@@ -19,7 +20,7 @@ function Navbar() {
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-3">
           <img
-            src="/photos/Weidemann Construction2.0-2.png" // Update this to reference the correct path from public folder
+            src="/photos/Weidemann Construction2.0-2.png"
             alt="Weidemann Yellow Logo"
             className="h-16"
           />
@@ -31,15 +32,22 @@ function Navbar() {
           </span>
         </Link>
 
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setNavbarOpen(!navbarOpen)} // Toggle navbar state
+          className="md:hidden text-white"
+        >
+          ☰
+        </button>
+
         {/* Navigation Links */}
         <div
-          className={`${
-            navbarOpen ? 'block' : 'hidden'
-          } w-full md:flex md:items-center md:w-auto`}
+          className={`${navbarOpen ? 'block' : 'hidden'
+            } w-full md:flex md:items-center md:w-auto`}
         >
           <div className="flex flex-col md:flex-row md:space-x-4 mt-2 md:mt-0">
             {/* Link Items */}
-            {['/', '/about', '/services','/contact'].map((path, index) => (
+            {['/', '/about', '/services', '/contact'].map((path, index) => (
               <Link
                 key={index}
                 to={path}
