@@ -2,52 +2,55 @@ import React from 'react';
 import '../styles/gallery.css';
 
 const HeroSection = () => {
-    const brightGoldColor = '#FFEB9C'; // Updated brighter gold color
+    const goldColor = '#FFEB9C'; // Updated text color to gold for theme consistency
     const emailAddress = 'mailto:kyle@weidemannconstruction.com'; // Correct email format with mailto: prefix
 
     return (
-        <div 
-            className="relative bg-black min-h-screen flex flex-col items-center justify-center"
-            style={{ 
-                height: "100vh",
-                overflow: "hidden"
+        <div
+            className="relative min-h-screen flex flex-col items-center justify-center text-center"
+            style={{
+                height: '100vh',
+                overflow: 'hidden',
             }}
         >
-            {/* New container for the image, resized and positioned */}
-            <div className="relative w-full h-80 mb-8"> {/* Adjust the height as needed */}
-                <img 
-                    src="/landinglogo%201.0.png" // Ensure image path is correct
-                    alt="Landing Page Image"
-                    className="w-full h-full object-contain"  // 'object-contain' ensures the whole image fits
-                />
-            </div>
+            {/* Fullscreen Video Background */}
+            <video
+                autoPlay
+                loop
+                muted
+                className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            >
+                <source src="/landingpagevideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
 
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4"
-                    style={{ fontFamily: 'Cinzel, serif', color: brightGoldColor }}
+            {/* Content Overlay with Background */}
+            <div className="relative z-10 flex flex-col items-center justify-center px-4"
+                style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px' }}>
+                <h1 className="text-5xl md:text-7xl font-extrabold mb-6"
+                    style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
                 >
                     Build Your Dreams with Us
                 </h1>
-                <p className="text-lg md:text-xl mb-8"
-                   style={{ fontFamily: 'Merriweather, serif', color: brightGoldColor }}
+                <p className="text-xl md:text-2xl font-bold mb-8"
+                    style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
                 >
                     Quality construction services tailored to your needs.
                 </p>
 
-                {/* New tagline for serving areas */}
-                <p className="text-md md:text-lg mb-8"
-                   style={{ fontFamily: 'Merriweather, serif', color: brightGoldColor }}
+                <p className="text-lg md:text-xl mb-8 font-semibold"
+                    style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
                 >
                     Proudly Serving La Crosse, Onalaska, Holmen, Winona and surrounding areas
                 </p>
 
-                {/* Updated "Get a Quote" Button to Send an Email */}
-                <a 
-                    href={emailAddress} 
-                    className="py-3 px-6 rounded-lg font-semibold transition-all duration-300 mb-8"
+                {/* Updated "Get a Quote" Button */}
+                <a
+                    href={emailAddress}
+                    className="py-4 px-8 rounded-lg font-semibold transition-all duration-300 mb-8"
                     style={{
                         background: 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(235,201,117,1) 100%)',
-                        color: '#000', // Set text color to black
+                        color: '#000', // Text color black
                         fontFamily: 'Merriweather, serif',
                         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
                     }}
@@ -57,22 +60,14 @@ const HeroSection = () => {
                     Get a Quote
                 </a>
 
-                {/* Logo image */}
+                {/* Logo Image */}
                 <div className="w-2/3 md:w-1/3 mb-8">
-                    <img 
-                        src="photos/Weidemann Construction2.0-2.png" 
+                    <img
+                        src="photos/Weidemann Construction2.0-2.png"
                         alt="Weidemann Construction Logo"
                         className="mx-auto"
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
-                </div>
-
-                {/* Autoplay Video */}
-                <div className="w-full flex justify-center">
-                    <video width="560" height="314" controls autoPlay muted loop>
-                        <source src="/landingpagevideo.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
                 </div>
             </div>
         </div>
