@@ -1,8 +1,5 @@
-// src/galleries/ExteriorFinishesGallery.js
-
 import React from 'react';
 import '../styles/gallery.css';
-
 
 const ExteriorFinishesGallery = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
@@ -14,11 +11,24 @@ const ExteriorFinishesGallery = () => {
     { src: '/photos/ExteriorFinishes/ExteriorGarage.png', caption: 'Steel Board and Batten Siding' },
     { src: '/photos/ExteriorFinishes/Outside1.png', caption: 'Outside Leisure Area' },
     { src: '/photos/ExteriorFinishes/Overhang.png', caption: 'Cedar Log Siding' },
-    //{ src: '/photos/ExteriorFinishes/image6.jpg', caption: 'Rustic Timber Charm' },
   ];
 
   return (
     <div className="bg-black py-16 px-4">
+      {/* Video Section at the Top */}
+      <div className="relative w-full mb-8 flex justify-center">
+        <video
+          autoPlay
+          loop
+          muted
+          className="rounded-lg shadow-lg"
+          style={{ maxWidth: '100%', height: 'auto' }}
+        >
+          <source src="/videos/MyMovie1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <div className="max-w-6xl mx-auto text-center">
         {/* Gallery Title */}
         <h2
