@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/gallery.css';
 
 const About = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color

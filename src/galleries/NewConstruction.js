@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/gallery.css';
 
 const ResidentialGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null); // State for the modal

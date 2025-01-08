@@ -1,6 +1,7 @@
 // src/galleries/GarageGallery.js
 
 import React from 'react';
+import '../styles/gallery.css';
 
 const GarageGallery = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color

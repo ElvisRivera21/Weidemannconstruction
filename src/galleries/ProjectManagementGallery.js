@@ -1,6 +1,8 @@
 // src/galleries/ExteriorFinishesGallery.js
 
 import React from 'react';
+import '../styles/gallery.css';
+
 
 const ExteriorFinishesGallery = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color

@@ -1,0 +1,30 @@
+/* Styles for larger screens */
+@media (min-width: 768px) {
+    .content {
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+/* Styles for tablets */
+@media (max-width: 768px) and (min-width: 481px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2em;
+    }
+
+    .content {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/gallery.css';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

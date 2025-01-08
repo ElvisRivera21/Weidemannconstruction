@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHammer, FaHardHat, FaTruckMoving } from 'react-icons/fa'; // Import icons for services
 import { useNavigate } from 'react-router-dom';
+import '../styles/gallery.css';
 
 const Services = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
@@ -19,7 +20,7 @@ const Services = () => {
       icon: <FaHardHat size={40} className="text-[#FFEB9C] mb-4" />,
       title: (
   <>
-    Additions & Porches
+    Additions & Porches/Decks
     
   </>
 ),
