@@ -1,16 +1,18 @@
-// src/galleries/ProjectManagementGallery.js
+// src/galleries/ExteriorFinishesGallery.js
 
 import React from 'react';
 
-const ProjectManagementGallery = () => {
+const ExteriorFinishesGallery = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
 
-  // Array of images for the project management gallery
+  // Array of images for the exterior finishes gallery
   const images = [
-    '/photos/ProjectManagement/image1.jpg',
-    '/photos/ProjectManagement/image2.jpg',
-    '/photos/ProjectManagement/image3.jpg',
-    // Add more image paths here
+    { src: '/photos/ExteriorFinishes/Curved.png', caption: 'Unique LP SmartSide Design' },
+    { src: '/photos/ExteriorFinishes/door1.png', caption: 'Quality Door Installations' },
+    { src: '/photos/ExteriorFinishes/ExteriorGarage.png', caption: 'Steel Board and Batten Siding' },
+    { src: '/photos/ExteriorFinishes/Outside1.png', caption: 'Outside Leisure Area' },
+    { src: '/photos/ExteriorFinishes/Overhang.png', caption: 'Cedar Log Siding' },
+    //{ src: '/photos/ExteriorFinishes/image6.jpg', caption: 'Rustic Timber Charm' },
   ];
 
   return (
@@ -21,24 +23,30 @@ const ProjectManagementGallery = () => {
           className="text-3xl md:text-4xl font-bold mb-8"
           style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
         >
-          Project Management Gallery
+          Exterior Finishes Gallery
         </h2>
         <p
           className="text-lg mb-8"
           style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
         >
-          Discover our project management expertise, ensuring timely and budget-friendly results.
+          Explore our variety of exterior finishes designed to impress and last.
         </p>
 
         {/* Grid Layout for Images */}
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {images.map((src, index) => (
+          {images.map((item, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
               <img
-                src={src}
-                alt={`Project management example ${index + 1}`}
+                src={item.src}
+                alt={item.caption}
                 className="w-full h-48 object-cover"
               />
+              <p
+                className="mt-2 text-sm"
+                style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
+              >
+                {item.caption}
+              </p>
             </div>
           ))}
         </div>
@@ -47,4 +55,4 @@ const ProjectManagementGallery = () => {
   );
 };
 
-export default ProjectManagementGallery;
+export default ExteriorFinishesGallery;
