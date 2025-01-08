@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/gallery.css';
 
 const HeroSection = () => {
     const brightGoldColor = '#FFEB9C'; // Updated brighter gold color

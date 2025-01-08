@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'; // Importing both Facebook and LinkedIn
+import '../styles/gallery.css';
+
 
 const Footer = () => {
   const goldColor = '#FFEB9C'; // Brighter gold color
