@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/gallery.css';
 
-
 function Navbar() {
   const location = useLocation();
-  const brightGoldColor = '#FFEB9C'; // Brighter gold to make text pop
+  const brightGoldColor = '#FFB612'; // Updated to the new hex color
   const activeColor = '#FFFFFF'; // Brighter white for the active link
 
   // Declare state for navbar toggle
-  const [navbarOpen, setNavbarOpen] = useState(false); // <-- Added this line
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <nav

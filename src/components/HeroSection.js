@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/gallery.css';
 
 const HeroSection = () => {
-    const goldColor = '#FFEB9C'; // Updated text color to gold for theme consistency
+    const goldColor = '#FDB927'; // New yellow color
     const emailAddress = 'mailto:kyle@weidemannconstruction.com'; // Correct email format with mailto: prefix
 
     return (
@@ -49,13 +49,13 @@ const HeroSection = () => {
                     href={emailAddress}
                     className="py-4 px-8 rounded-lg font-semibold transition-all duration-300 mb-8"
                     style={{
-                        background: 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(235,201,117,1) 100%)',
+                        background: 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(253,185,39,1) 100%)',
                         color: '#000', // Text color black
                         fontFamily: 'Merriweather, serif',
                         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
                     }}
-                    onMouseEnter={(e) => e.target.style.background = 'rgba(255, 215, 0, 0.8)'}
-                    onMouseLeave={(e) => e.target.style.background = 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(235,201,117,1) 100%)'}
+                    onMouseEnter={(e) => e.target.style.background = 'rgba(255, 220, 90, 0.8)'}
+                    onMouseLeave={(e) => e.target.style.background = 'linear-gradient(90deg, rgba(92,82,3,1) 0%, rgba(253,185,39,1) 100%)'}
                 >
                     Get a Quote
                 </a>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/gallery.css';
 
 const About = () => {
-  const goldColor = '#FFEB9C'; // Brighter gold color
+  const goldColor = '#FDB927'; // Updated to the new yellow color
   const blackColor = '#000000'; // Black background color
 
   return (

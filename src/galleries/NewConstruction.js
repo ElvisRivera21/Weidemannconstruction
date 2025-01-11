@@ -3,8 +3,8 @@ import '../styles/gallery.css';
 
 const ResidentialGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null); // State for the modal
-  const goldColor = '#FFEB9C'; // Brighter gold color
-  const modalGoldColor = '#FFC107'; // Slightly darker gold for readability
+  const goldColor = '#FDB927'; // Updated to the new yellow color
+  const modalGoldColor = '#FDB927'; // Consistent yellow for readability
 
   const images = [
     { src: '/photos/ResidentialServices/GreenOne.png', text: 'Custom Garages' },
@@ -15,7 +15,7 @@ const ResidentialGallery = () => {
     { src: '/photos/ResidentialServices/Generalcontracting.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction2.png', text: 'Custom Home' },
-       {src: '/photos/ResidentialServices/NewConstruction3.png', text: 'Custom Home'},
+    { src: '/photos/ResidentialServices/NewConstruction3.png', text: 'Custom Home' },
   ];
 
   return (

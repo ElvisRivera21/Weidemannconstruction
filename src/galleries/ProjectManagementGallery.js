@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/gallery.css';
 
 const ExteriorFinishesGallery = () => {
-  const goldColor = '#FFEB9C'; // Brighter gold color
+  const goldColor = '#FDB927'; // Updated to the new yellow color
 
   // Array of images for the exterior finishes gallery
   const images = [

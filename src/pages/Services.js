@@ -4,34 +4,36 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/gallery.css';
 
 const Services = () => {
-  const goldColor = '#FFEB9C'; // Brighter gold color
+  const goldColor = '#FDB927'; // Updated to the new yellow color
   const navigate = useNavigate();
 
   // Define service data with icons, titles, descriptions, images, and routes
   const services = [
     {
-      icon: <FaHammer size={40} className="text-[#FFEB9C] mb-4" />,
+      icon: <FaHammer size={40} className="text-[#FDB927] mb-4" />,
       title: 'New Construction',
-      description: 'We provide quality residential construction services tailored to your needs. From custom homes, to detached garages, and new buildings.',
+      description:
+        'We provide quality residential construction services tailored to your needs. From custom homes, to detached garages, and new buildings.',
       image: '/photos/ResidentialServices/ResedentialServicesCover.png',
       route: '/gallery/residential', // Add the route path for the residential gallery
     },
     {
-      icon: <FaHardHat size={40} className="text-[#FFEB9C] mb-4" />,
+      icon: <FaHardHat size={40} className="text-[#FDB927] mb-4" />,
       title: (
-  <>
-    Additions & Porches/Decks
-    
-  </>
-),
-      description: 'Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms.we bring your vision to life while adding value to your home.',
+        <>
+          Additions & Porches/Decks
+        </>
+      ),
+      description:
+        'Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms, we bring your vision to life while adding value to your home.',
       image: '/photos/GarageServices/GarageServicesCover.png',
       route: '/gallery/garage', // Route path for the garage gallery
     },
     {
-      icon: <FaTruckMoving size={40} className="text-[#FFEB9C] mb-4" />,
+      icon: <FaTruckMoving size={40} className="text-[#FDB927] mb-4" />,
       title: 'Exteriors Finishes',
-      description: 'Transform your home with top-quality siding, soffit/fascia, windows. Durable stylish decks and pergolas that are built to last, because your home deserves the best.',
+      description:
+        'Transform your home with top-quality siding, soffit/fascia, windows. Durable stylish decks and pergolas that are built to last, because your home deserves the best.',
       image: '/photos/ProjectMangement/ProjectManagementCover.png',
       route: '/gallery/project-management', // Route path for the project management gallery
     },
@@ -39,31 +41,28 @@ const Services = () => {
 
   // Additional services list
   const additionalServices = [
-    "General Contracting",
-    "New Construction",
-    "Remodeling",
-    "Additions",
-    "Kitchens",
-    "Bathrooms",
-    "Framing",
-    "Siding",
-    "Decks and Pergolas",
-    "Garages",
-    
-    
+    'General Contracting',
+    'New Construction',
+    'Remodeling',
+    'Additions',
+    'Kitchens',
+    'Bathrooms',
+    'Framing',
+    'Siding',
+    'Decks and Pergolas',
+    'Garages',
   ];
 
   return (
     <div className="bg-black py-16 px-4">
       {/* Container for the content */}
       <div className="max-w-6xl mx-auto text-center">
-
         {/* Grid Layout for Additional Services */}
         <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mb-8">
           {additionalServices.map((service, index) => (
             <div
               key={index}
-              className="bg-[#FFEB9C] text-black font-semibold py-2 px-4 rounded-md shadow-md"
+              className="bg-[#FDB927] text-black font-semibold py-2 px-4 rounded-md shadow-md"
               style={{ fontFamily: 'Merriweather, serif' }}
             >
               {service}

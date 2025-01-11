@@ -4,7 +4,7 @@ import React from 'react';
 import '../styles/gallery.css';
 
 const GarageGallery = () => {
-  const goldColor = '#FFEB9C'; // Brighter gold color
+  const goldColor = '#FDB927'; // Updated to the new yellow color
 
   // Array of images for the garage gallery
   const images = [
@@ -19,8 +19,8 @@ const GarageGallery = () => {
     { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Covered Deck Mid-Construction' },
     { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Three Season Room Mid-Construction' },
     { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
-    //{ src: '', text: 'Enclosed Patios' },
-    //{ src: '/photos/ResidentialServices/StoneTwo.png', text: 'Multi-Season Rooms' }
+    // { src: '', text: 'Enclosed Patios' },
+    // { src: '/photos/ResidentialServices/StoneTwo.png', text: 'Multi-Season Rooms' }
   ];
 
   return (
@@ -43,7 +43,10 @@ const GarageGallery = () => {
         {/* Grid Layout for Images */}
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {images.map((image, index) => (
-            <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div
+              key={index}
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
               <img
                 src={image.src}
                 alt={image.text}

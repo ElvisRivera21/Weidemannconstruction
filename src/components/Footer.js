@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'; // Importing both Facebook and LinkedIn
 import '../styles/gallery.css';
 
-
 const Footer = () => {
-  const goldColor = '#FFEB9C'; // Brighter gold color
+  const goldColor = '#FDB927'; // Updated to the new yellow color
   const blackColor = '#000000'; // Black for the red-circled area
 
   return (
@@ -72,9 +71,6 @@ const Footer = () => {
                   Services
                 </Link>
               </li>
-              <li className="mb-2">
-                
-              </li>
               <li>
                 <Link
                   to="/contact"
@@ -101,6 +97,14 @@ const Footer = () => {
                 style={{ color: goldColor }}
               >
                 <FaFacebookF size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/therealelvis/"
+                className="hover:text-blue-500 transition"
+                aria-label="LinkedIn"
+                style={{ color: goldColor }}
+              >
+                <FaLinkedinIn size={24} />
               </a>
             </div>
           </div>
