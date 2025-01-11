@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaHammer, FaHardHat, FaTruckMoving } from 'react-icons/fa'; // Import icons for services
+import { FaHammer, FaHardHat, FaTruckMoving, FaCouch } from 'react-icons/fa'; // Added FaCouch for Interior Gallery
 import { useNavigate } from 'react-router-dom';
 import '../styles/gallery.css';
 
 const Services = () => {
-  const goldColor = '#FDB927'; // Updated to the new yellow color
+  const goldColor = '#FDB927'; // Updated yellow color
   const navigate = useNavigate();
 
   // Define service data with icons, titles, descriptions, images, and routes
@@ -13,9 +13,9 @@ const Services = () => {
       icon: <FaHammer size={40} className="text-[#FDB927] mb-4" />,
       title: 'New Construction',
       description:
-        'We provide quality residential construction services tailored to your needs. From custom homes, to detached garages, and new buildings.',
+        'We provide quality residential construction services tailored to your needs. From custom homes to detached garages and new buildings.',
       image: 'photos/ResidentialServices/NewConstruction2.png',
-      route: '/gallery/residential', // Add the route path for the residential gallery
+      route: '/gallery/residential', // Route path for the residential gallery
     },
     {
       icon: <FaHardHat size={40} className="text-[#FDB927] mb-4" />,
@@ -33,9 +33,17 @@ const Services = () => {
       icon: <FaTruckMoving size={40} className="text-[#FDB927] mb-4" />,
       title: 'Exteriors Finishes',
       description:
-        'Transform your home with top-quality siding, soffit/fascia, windows. Durable stylish decks and pergolas that are built to last, because your home deserves the best.',
+        'Transform your home with top-quality siding, soffit/fascia, windows, and stylish decks or pergolas. Durable solutions built to last.',
       image: 'photos/GarageServices/GarageServicesCover.png',
       route: '/gallery/project-management', // Route path for the project management gallery
+    },
+    {
+      icon: <FaCouch size={40} className="text-[#FDB927] mb-4" />, // New icon for Interior Gallery
+      title: 'Interior Gallery',
+      description:
+        'Explore our stunning interior projects, from doors & windows to kitchen cabinetry and everything in between.',
+      image: 'photos/ShadyPine/Island1.png', // Replace with actual interior gallery image
+      route: '/gallery/interior', // Route path for the interior gallery
     },
   ];
 
@@ -51,6 +59,7 @@ const Services = () => {
     'Siding',
     'Decks and Pergolas',
     'Garages',
+    'Interiors', // Added "Interiors" for alignment with the Interior Gallery
   ];
 
   return (
