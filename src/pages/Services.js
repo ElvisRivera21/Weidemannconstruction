@@ -14,7 +14,7 @@ const Services = () => {
       title: 'New Construction',
       description:
         'We provide quality residential construction services tailored to your needs. From custom homes, to detached garages, and new buildings.',
-      image: '/photos/ResidentialServices/ResedentialServicesCover.png',
+      image: 'photos/ResidentialServices/NewConstruction2.png',
       route: '/gallery/residential', // Add the route path for the residential gallery
     },
     {
@@ -26,7 +26,7 @@ const Services = () => {
       ),
       description:
         'Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms, we bring your vision to life while adding value to your home.',
-      image: '/photos/GarageServices/GarageServicesCover.png',
+      image: 'photos/AdditionsPorches/covered2.png',
       route: '/gallery/garage', // Route path for the garage gallery
     },
     {
@@ -34,7 +34,7 @@ const Services = () => {
       title: 'Exteriors Finishes',
       description:
         'Transform your home with top-quality siding, soffit/fascia, windows. Durable stylish decks and pergolas that are built to last, because your home deserves the best.',
-      image: '/photos/ProjectMangement/ProjectManagementCover.png',
+      image: 'photos/GarageServices/GarageServicesCover.png',
       route: '/gallery/project-management', // Route path for the project management gallery
     },
   ];
@@ -98,7 +98,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-md mb-4"
+                    className="w-full h-64 object-contain rounded-md mb-4" // Ensure the whole image fits
                   />
                 )}
                 {/* Service Icon */}
