@@ -7,15 +7,15 @@ const InteriorGallery = () => {
     const modalGoldColor = '#FDB927'; // Consistent yellow for readability
 
     const images = [
-        { src: '/photos/InteriorGallery/LivingRoom1.png', text: 'Modern Living Room' },
-        { src: '/photos/InteriorGallery/Kitchen1.png', text: 'Elegant Kitchen Design' },
-        { src: '/photos/InteriorGallery/Bedroom1.png', text: 'Cozy Bedroom' },
-        { src: '/photos/InteriorGallery/Bathroom1.png', text: 'Luxurious Bathroom' },
-        { src: '/photos/InteriorGallery/DiningRoom1.png', text: 'Spacious Dining Area' },
-        { src: '/photos/InteriorGallery/Office1.png', text: 'Functional Home Office' },
-        { src: '/photos/InteriorGallery/LivingRoom2.png', text: 'Stylish Living Space' },
-        { src: '/photos/InteriorGallery/Kitchen2.png', text: 'Contemporary Kitchen' },
-        { src: '/photos/InteriorGallery/Bathroom2.png', text: 'Modern Bathroom' },
+        { src: 'photos/ShadyPine/BathroomView.png', text: 'Modern Living Room' },
+  //      { src: '/photos/InteriorGallery/Kitchen1.png', text: 'Elegant Kitchen Design' },
+//{ src: '/photos/InteriorGallery/Bedroom1.png', text: 'Cozy Bedroom' },
+       // { src: '/photos/InteriorGallery/Bathroom1.png', text: 'Luxurious Bathroom' },
+       // { src: '/photos/InteriorGallery/DiningRoom1.png', text: 'Spacious Dining Area' },
+       // { src: '/photos/InteriorGallery/Office1.png', text: 'Functional Home Office' },
+        //{ src: '/photos/InteriorGallery/LivingRoom2.png', text: 'Stylish Living Space' },
+        //{ src: '/photos/InteriorGallery/Kitchen2.png', text: 'Contemporary Kitchen' },
+        //{ src: '/photos/InteriorGallery/Bathroom2.png', text: 'Modern Bathroom' },
     ];
 
     return (

@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import NewConstruction from './galleries/NewConstruction'; // Updated import
 import GarageGallery from './galleries/GarageGallery';
 import ProjectManagementGallery from './galleries/ProjectManagementGallery';
+import InteriorGallery from './galleries/InteriorGallery';
 
 function App() {
   return (
