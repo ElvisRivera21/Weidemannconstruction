@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 import NewConstruction from './galleries/NewConstruction'; // Updated import
 import GarageGallery from './galleries/GarageGallery';
 import ProjectManagementGallery from './galleries/ProjectManagementGallery';
-import InteriorGallery from './galleries/InteriorGallery';
+import InteriorGallery from './galleries/InteriorGallery'; // Import InteriorGallery
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
           <Route path="/gallery/residential" element={<NewConstruction />} /> {/* Updated component */}
           <Route path="/gallery/garage" element={<GarageGallery />} />
           <Route path="/gallery/project-management" element={<ProjectManagementGallery />} />
+          <Route path="/gallery/interior" element={<InteriorGallery />} /> {/* Added InteriorGallery route */}
         </Routes>
         <Footer />
       </div>
