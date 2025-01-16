@@ -11,6 +11,7 @@ const ExteriorFinishesGallery = () => {
     { src: '/photos/ExteriorFinishes/ExteriorGarage.png', caption: 'Steel Board and Batten Siding' },
     { src: '/photos/ExteriorFinishes/Outside1.png', caption: 'Outside Leisure Area' },
     { src: '/photos/ExteriorFinishes/Overhang.png', caption: 'Cedar Log Siding' },
+    { src: '/photos/ExteriorFinishes/GreenHouseDog.png', caption: 'Green House' },
   ];
 
   return (
