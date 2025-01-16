@@ -23,8 +23,8 @@ const InteriorGallery = () => {
             <h2
                 className="text-3xl md:text-4xl font-bold mb-8"
                 style={{
-                    fontFamily: 'Cinzel, serif', // Elegant serif font for headings
-                    color: '#F6B817', // Matching gold color for the theme
+                    fontFamily: 'Cinzel, serif',
+                    color: '#F6B817',
                 }}
             >
                 Interior Gallery
@@ -34,8 +34,8 @@ const InteriorGallery = () => {
             <p
                 className="text-lg mb-8"
                 style={{
-                    fontFamily: 'Merriweather, serif', // Serif font for subheading
-                    color: '#F6B817', // Same gold color as the theme
+                    fontFamily: 'Merriweather, serif',
+                    color: '#F6B817',
                 }}
             >
                 Explore our stunning interior designs, crafted for beauty and functionality.
@@ -44,21 +44,25 @@ const InteriorGallery = () => {
             {/* Gallery Grid */}
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {images.map(({ src, text }, index) => (
-                    <div
-                        key={index}
-                        className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                        onClick={() => setSelectedImage({ src, text })}
-                    >
-                        <img
-                            src={src}
-                            alt={text}
-                            className="w-full h-48 object-cover"
-                        />
-                        <p
-                            className="text-sm mt-2"
+                    <div key={index} className="text-center">
+                        <div
+                            className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                             style={{
-                                fontFamily: 'Merriweather, serif', // Consistent serif font for captions
-                                color: '#F6B817', // Matching gold
+                                aspectRatio: '4 / 3', // Maintain aspect ratio for each container
+                            }}
+                            onClick={() => setSelectedImage({ src, text })}
+                        >
+                            <img
+                                src={src}
+                                alt={text}
+                                className="w-full h-full object-cover" // Ensure images fit properly
+                            />
+                        </div>
+                        <p
+                            className="mt-2 text-sm font-semibold"
+                            style={{
+                                fontFamily: 'Merriweather, serif',
+                                color: '#F6B817', // Matching gold for text
                             }}
                         >
                             {text}
@@ -79,8 +83,8 @@ const InteriorGallery = () => {
                         <p
                             className="text-lg mt-4"
                             style={{
-                                fontFamily: 'Cinzel, serif', // Elegant font for modal text
-                                color: '#F6B817', // Matching gold for modal text
+                                fontFamily: 'Cinzel, serif',
+                                color: '#F6B817',
                                 textAlign: 'center',
                             }}
                         >
@@ -90,8 +94,8 @@ const InteriorGallery = () => {
                             onClick={() => setSelectedImage(null)}
                             className="mt-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600 transition"
                             style={{
-                                fontFamily: 'Merriweather, serif', // Consistent font for button text
-                                backgroundColor: '#F6B817', // Match gold for button
+                                fontFamily: 'Merriweather, serif',
+                                backgroundColor: '#F6B817',
                                 color: 'black',
                             }}
                         >
