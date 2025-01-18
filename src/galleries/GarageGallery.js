@@ -11,7 +11,7 @@ const GarageGallery = () => {
   const images = [
     { src: '/photos/AdditionsPorches/covered1.png', text: 'Three Season Porch' },
     { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
-    { src: '/photos/AdditionsPorches/alumDeck.png', text: 'Deck With Aluminum Railings' },
+    
     { src: '/photos/AdditionsPorches/brownCovered1.png', text: 'Covered Deck With Screened In Porch' },
     { src: '/photos/AdditionsPorches/brownCovered2.png', text: 'Covered Deck With A Curved Overhang' },
     { src: '/photos/AdditionsPorches/greaterRoomAddition.png', text: 'Great Room Addition Mid-Construction' },
@@ -19,7 +19,7 @@ const GarageGallery = () => {
     { src: '/photos/AdditionsPorches/LeanRoof.png', text: 'Lean-To Roof With Speakers & Lights' },
     { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Covered Deck Mid-Construction' },
     { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Three Season Room Mid-Construction' },
-    { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
+    
     { src: '/photos/AdditionsPorches/ThreeSeasonPorches.png', text: 'Three Season Porches' },
     { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Ceader Finish' },
   ];
@@ -72,7 +72,7 @@ const GarageGallery = () => {
           className="text-3xl md:text-4xl font-bold mb-8"
           style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
         >
-          Additions & Porches
+          Additions & Porches Gallery
         </h2>
         <p
           className="text-lg mb-8"

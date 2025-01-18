@@ -21,7 +21,7 @@ const Services = () => {
       icon: <FaHardHat size={40} className="text-[#FDB927] mb-4" />,
       title: (
         <>
-          Additions & Porches/Decks
+          Additions & Porches 
         </>
       ),
       description:

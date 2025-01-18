@@ -16,6 +16,8 @@ const ExteriorFinishesGallery = () => {
     { src: '/photos/ExteriorFinishes/GreenExterior.png', caption: 'Cabin Fever' },
     { src: '/photos/ExteriorFinishes/BBQ.png', caption: 'Outdoor BBQ Pit' },
     { src: '/photos/ExteriorFinishes/CustomGarage.png', caption: 'Custom Garage' },
+    { src: '/photos/AdditionsPorches/alumDeck.png', text: 'Deck With Aluminum Railings' },
+    { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
   ];
 
   const handleNextSlide = () => {
