@@ -1,9 +1,10 @@
 // src/galleries/GarageGallery.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/gallery.css';
 
 const GarageGallery = () => {
+  const [currentSlide, setCurrentSlide] = useState(0); // State for the slideshow
   const goldColor = '#FDB927'; // Updated to the new yellow color
 
   // Array of images for the garage gallery
@@ -21,12 +22,50 @@ const GarageGallery = () => {
     { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
     { src: '/photos/AdditionsPorches/ThreeSeasonPorches.png', text: 'Three Season Porches' },
     { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Ceader Finish' },
-    // { src: '', text: 'Enclosed Patios' },
-    // { src: '/photos/ResidentialServices/StoneTwo.png', text: 'Multi-Season Rooms' }
   ];
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? images.length - 1 : prevSlide - 1
+    );
+  };
 
   return (
     <div className="bg-black py-16 px-4">
+      {/* Slideshow Section */}
+      <div className="max-w-6xl mx-auto mb-12 relative">
+        <div className="relative h-64">
+          <img
+            src={images[currentSlide].src}
+            alt={images[currentSlide].text}
+            className="w-full h-full object-contain rounded-lg"
+          />
+          <button
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
+            onClick={handlePrevSlide}
+          >
+            &#10094;
+          </button>
+          <button
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
+            onClick={handleNextSlide}
+          >
+            &#10095;
+          </button>
+        </div>
+        <p
+          className="text-center mt-4"
+          style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
+        >
+          {images[currentSlide].text}
+        </p>
+      </div>
+
+      {/* Gallery Section */}
       <div className="max-w-6xl mx-auto text-center">
         {/* Gallery Title */}
         <h2
@@ -39,7 +78,8 @@ const GarageGallery = () => {
           className="text-lg mb-8"
           style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
         >
-          Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms, we bring your vision to life while adding value to your home.
+          Expand your living space with Weidemann Construction. From cozy three-season porches to
+          additional rooms, we bring your vision to life while adding value to your home.
         </p>
 
         {/* Grid Layout for Images */}
