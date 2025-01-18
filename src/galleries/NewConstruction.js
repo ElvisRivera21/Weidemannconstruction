@@ -20,7 +20,6 @@ const ResidentialGallery = () => {
     '/photos/ResidentialServices/NewConstruction2.png',
     '/photos/ResidentialServices/NewConstruction3.png',
     '/photos/ResidentialServices/Framing.png',
-
   ];
 
   const images = [
@@ -56,7 +55,7 @@ const ResidentialGallery = () => {
           <img
             src={slideshowImages[currentSlide]}
             alt={`Slide ${currentSlide + 1}`}
-            className="w-full h-full object-contain rounded-lg"
+            className="w-full h-full object-contain rounded-lg" // Ensure slideshow images have rounded corners
           />
           <button
             className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
@@ -98,9 +97,15 @@ const ResidentialGallery = () => {
               <img
                 src={src}
                 alt={text}
-                className="w-full h-48 object-contain" // Show entire image
+                className="w-full h-48 object-cover rounded-lg" // Added rounded corners to gallery images
               />
-              <p className="text-sm mt-2" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
+              <p
+                className="text-sm mt-2"
+                style={{
+                  color: goldColor,
+                  fontFamily: 'Merriweather, serif',
+                }}
+              >
                 {text}
               </p>
             </div>
@@ -115,7 +120,7 @@ const ResidentialGallery = () => {
             <img
               src={selectedImage.src}
               alt={selectedImage.text}
-              className="w-full rounded-lg object-contain" // Show entire image
+              className="w-full rounded-lg object-contain" // Added rounded corners to modal images
             />
             <p
               className="text-lg mt-4"
