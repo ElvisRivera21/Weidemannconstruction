@@ -7,6 +7,8 @@ const ResidentialGallery = () => {
   const modalGoldColor = '#FDB927'; // Consistent yellow for readability
 
   const images = [
+    { src: '/photos/ResidentialServices/CustomOne.png', text: 'Custom Build' },
+    { src: '/photos/ResidentialServices/CustomTwo.png', text: 'Custom Build' },
     { src: '/photos/ResidentialServices/GreenOne.png', text: 'Custom Garages' },
     { src: '/photos/ResidentialServices/GreenTwo.png', text: 'Custom Garages' },
     { src: '/photos/Weedy.png', text: 'Weedy' },
@@ -16,6 +18,7 @@ const ResidentialGallery = () => {
     { src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction2.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction3.png', text: 'Custom Home' },
+    { src: '/photos/ResidentialServices/Framing.png', text: 'Framing' },
   ];
 
   return (
