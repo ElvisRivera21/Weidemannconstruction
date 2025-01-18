@@ -20,6 +20,7 @@ const ResidentialGallery = () => {
     '/photos/ResidentialServices/NewConstruction2.png',
     '/photos/ResidentialServices/NewConstruction3.png',
     '/photos/ResidentialServices/Framing.png',
+    '/photos/ResidentialServices/GreenHouse.png'
   ];
 
   const images = [
@@ -32,7 +33,7 @@ const ResidentialGallery = () => {
     { src: '/photos/ResidentialServices/Trusspic.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/Generalcontracting.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Custom Home' },
-    { src: '/photos/ResidentialServices/NewConstruction2.png', text: 'Custom Home' },
+    { src: '/photos/ResidentialServices/GreenHouse.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction3.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/Framing.png', text: 'Framing' },
   ];
