@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 const InteriorGallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [currentSlide, setCurrentSlide] = useState(0); // State for the slideshow
+
+    const goldColor = '#F6B817'; // Matching gold for text and buttons
 
     const images = [
         { src: '/photos/ShadyPine/KitchenIsland.png', text: 'Kitchen Island' },
@@ -17,14 +20,53 @@ const InteriorGallery = () => {
         { src: '/photos/ShadyPine/FullBathroomRemodel.png', text: 'Full Bathroom Remodel' },
     ];
 
+    const handleNextSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    };
+
+    const handlePrevSlide = () => {
+        setCurrentSlide((prevSlide) =>
+            prevSlide === 0 ? images.length - 1 : prevSlide - 1
+        );
+    };
+
     return (
         <div className="bg-black py-16 px-4 text-center">
+            {/* Slideshow Section */}
+            <div className="max-w-6xl mx-auto mb-12 relative">
+                <div className="relative h-64">
+                    <img
+                        src={images[currentSlide].src}
+                        alt={images[currentSlide].text}
+                        className="w-full h-full object-contain rounded-lg"
+                    />
+                    <button
+                        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
+                        onClick={handlePrevSlide}
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
+                        onClick={handleNextSlide}
+                    >
+                        &#10095;
+                    </button>
+                </div>
+                <p
+                    className="text-center mt-4"
+                    style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
+                >
+                    {images[currentSlide].text}
+                </p>
+            </div>
+
             {/* Gallery Title */}
             <h2
                 className="text-3xl md:text-4xl font-bold mb-8"
                 style={{
                     fontFamily: 'Cinzel, serif',
-                    color: '#F6B817',
+                    color: goldColor,
                 }}
             >
                 Interior Gallery
@@ -35,7 +77,7 @@ const InteriorGallery = () => {
                 className="text-lg mb-8"
                 style={{
                     fontFamily: 'Merriweather, serif',
-                    color: '#F6B817',
+                    color: goldColor,
                 }}
             >
                 Explore our stunning interior designs, crafted for beauty and functionality.
@@ -55,14 +97,14 @@ const InteriorGallery = () => {
                             <img
                                 src={src}
                                 alt={text}
-                                className="w-full h-full object-cover" // Ensure images fit properly
+                                className="w-full h-full object-cover"
                             />
                         </div>
                         <p
                             className="mt-2 text-sm font-semibold"
                             style={{
                                 fontFamily: 'Merriweather, serif',
-                                color: '#F6B817', // Matching gold for text
+                                color: goldColor,
                             }}
                         >
                             {text}
@@ -84,7 +126,7 @@ const InteriorGallery = () => {
                             className="text-lg mt-4"
                             style={{
                                 fontFamily: 'Cinzel, serif',
-                                color: '#F6B817',
+                                color: goldColor,
                                 textAlign: 'center',
                             }}
                         >
@@ -95,7 +137,7 @@ const InteriorGallery = () => {
                             className="mt-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600 transition"
                             style={{
                                 fontFamily: 'Merriweather, serif',
-                                backgroundColor: '#F6B817',
+                                backgroundColor: goldColor,
                                 color: 'black',
                             }}
                         >
