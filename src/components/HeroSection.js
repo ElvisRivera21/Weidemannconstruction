@@ -63,7 +63,7 @@ const HeroSection = () => {
                 {/* Logo Image */}
                 <div className="w-2/3 md:w-1/3 mb-8">
                     <img
-                        src="photos/Logo/Weidemann Construction-2.png"
+                        src="/photos/Logo/WLogo.png"
                         alt="Weidemann Construction Logo"
                         className="mx-auto"
                         style={{ maxWidth: '100%', height: 'auto' }}

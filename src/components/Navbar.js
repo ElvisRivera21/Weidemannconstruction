@@ -21,7 +21,7 @@ function Navbar() {
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-3">
           <img
-            src="photos/Logo/Weidemann Construction-2.png"
+            src="/photos/Logo/WLogo.png"
             alt="Weidemann Yellow Logo"
             className="h-16"
           />
