@@ -13,6 +13,7 @@ const ExteriorFinishesGallery = () => {
     { src: '/photos/ExteriorFinishes/Overhang.png', caption: 'Cedar Log Siding' },
     { src: '/photos/ExteriorFinishes/GreenHouseDog.png', caption: 'Green House' },
     { src: '/photos/ExteriorFinishes/OutsideFraming.JPG', caption: 'Cabin Fever' },
+    { src: '/photos/ExteriorFinishes/BBQ.png', caption: 'Outdoor BBQ Pit' },
   ];
 
   return (

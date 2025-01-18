@@ -19,6 +19,8 @@ const GarageGallery = () => {
     { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Covered Deck Mid-Construction' },
     { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Three Season Room Mid-Construction' },
     { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
+    { src: '/photos/AdditionsPorches/ThreeSeasonPorches.png', text: 'Three Season Porches' },
+    { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Ceader Finish' },
     // { src: '', text: 'Enclosed Patios' },
     // { src: '/photos/ResidentialServices/StoneTwo.png', text: 'Multi-Season Rooms' }
   ];
