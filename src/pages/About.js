@@ -10,24 +10,40 @@ const About = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
         <h2
-          className="text-3xl md:text-4xl font-bold mb-4"
+          className="text-3xl md:text-4xl font-bold mb-8" // Added more bottom margin
           style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
         >
           About Us
         </h2>
+
+        {/* Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          className="rounded-lg shadow-lg mb-8" // Added margin to the video
+          style={{ maxWidth: '100%', height: 'auto' }}
+        >
+          <source src="/videos/MyMovie1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         {/* Description */}
         <p
           className="text-lg md:text-xl mb-8"
           style={{ fontFamily: 'Merriweather, serif', color: 'white' }}
         >
-          At Weidemann Construction, we are dedicated to building high-quality, sustainable structures that meet the needs of our clients. With years of experience in the construction industry, our team is committed to delivering exceptional results on every project.
+          At Weidemann Construction, we are dedicated to building high-quality, sustainable
+          structures that meet the needs of our clients. With years of experience in the construction
+          industry, our team is committed to delivering exceptional results on every project.
         </p>
         <p
           className="text-lg md:text-xl mb-8"
           style={{ fontFamily: 'Merriweather, serif', color: 'white' }}
         >
-          Our mission is to provide innovative construction solutions while maintaining integrity, quality, and safety. We believe that communication and collaboration with our clients are key to achieving successful outcomes.
+          Our mission is to provide innovative construction solutions while maintaining integrity,
+          quality, and safety. We believe that communication and collaboration with our clients are
+          key to achieving successful outcomes.
         </p>
 
         {/* Images */}

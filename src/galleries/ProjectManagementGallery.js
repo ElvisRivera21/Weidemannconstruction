@@ -22,16 +22,7 @@ const ExteriorFinishesGallery = () => {
     <div className="bg-black py-16 px-4">
       {/* Video Section at the Top */}
       <div className="relative w-full mb-8 flex justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg shadow-lg"
-          style={{ maxWidth: '100%', height: 'auto' }}
-        >
-          <source src="/videos/MyMovie1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+       
       </div>
 
       <div className="max-w-6xl mx-auto text-center">
