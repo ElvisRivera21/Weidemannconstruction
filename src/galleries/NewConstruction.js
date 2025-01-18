@@ -3,8 +3,25 @@ import '../styles/gallery.css';
 
 const ResidentialGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null); // State for the modal
+  const [currentSlide, setCurrentSlide] = useState(0); // State for the slideshow
   const goldColor = '#FDB927'; // Updated to the new yellow color
   const modalGoldColor = '#FDB927'; // Consistent yellow for readability
+
+  const slideshowImages = [
+    '/photos/ResidentialServices/CustomOne.png',
+    '/photos/ResidentialServices/CustomTwo.png',
+    '/photos/ResidentialServices/GreenOne.png',
+    '/photos/ResidentialServices/GreenTwo.png',
+    '/photos/Weedy.png',
+    '/photos/ResidentialServices/RedThree.png',
+    '/photos/ResidentialServices/Trusspic.png',
+    '/photos/ResidentialServices/Generalcontracting.png',
+    '/photos/ResidentialServices/NewConstruction1.png',
+    '/photos/ResidentialServices/NewConstruction2.png',
+    '/photos/ResidentialServices/NewConstruction3.png',
+    '/photos/ResidentialServices/Framing.png',
+
+  ];
 
   const images = [
     { src: '/photos/ResidentialServices/CustomOne.png', text: 'Custom Build' },
@@ -21,8 +38,42 @@ const ResidentialGallery = () => {
     { src: '/photos/ResidentialServices/Framing.png', text: 'Framing' },
   ];
 
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % slideshowImages.length);
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? slideshowImages.length - 1 : prevSlide - 1
+    );
+  };
+
   return (
     <div className="bg-black py-16 px-4">
+      {/* Slideshow Section */}
+      <div className="max-w-6xl mx-auto mb-12 relative">
+        <div className="relative h-64">
+          <img
+            src={slideshowImages[currentSlide]}
+            alt={`Slide ${currentSlide + 1}`}
+            className="w-full h-full object-contain rounded-lg"
+          />
+          <button
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
+            onClick={handlePrevSlide}
+          >
+            &#10094;
+          </button>
+          <button
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
+            onClick={handleNextSlide}
+          >
+            &#10095;
+          </button>
+        </div>
+      </div>
+
+      {/* Gallery Section */}
       <div className="max-w-6xl mx-auto text-center">
         <h2
           className="text-3xl md:text-4xl font-bold mb-8"
