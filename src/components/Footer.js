@@ -98,14 +98,7 @@ const Footer = () => {
               >
                 <FaFacebookF size={24} />
               </a>
-              <a
-                href="https://www.linkedin.com/in/therealelvis/"
-                className="hover:text-blue-500 transition"
-                aria-label="LinkedIn"
-                style={{ color: goldColor }}
-              >
-                <FaLinkedinIn size={24} />
-              </a>
+            
             </div>
           </div>
         </div>
