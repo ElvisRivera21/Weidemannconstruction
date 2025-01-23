@@ -82,6 +82,18 @@ const HeroSection = () => {
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
                 </div>
+                
+                {/*Year Established*/}
+                
+                <p
+                    className="text-xl md:text-2xl font-bold mb-8"
+                    style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
+                >
+                    Est. 2020
+                </p>
+
+
+
             </div>
         </div>
     );
