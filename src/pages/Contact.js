@@ -135,8 +135,13 @@ const ContactForm = () => {
             >
               <option value="" disabled>Select a project type</option>
               <option value="new_construction">New Construction</option>
-          
-              <option value="remodeling">Remodeling</option>
+              <option value="additions">Additions </option>
+              <option value="siding">Siding</option>
+              <option value="porhces and decks">Porches/Decks</option>
+
+
+
+
               <option value="other">Other</option>
             </select>
           </div>
