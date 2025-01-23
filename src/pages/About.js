@@ -51,6 +51,14 @@ const About = () => {
           structures that meet the needs of our clients. With years of experience in the
           construction industry, our team is committed to delivering exceptional results on every project.
         </p>
+
+        <p
+          className="text-lg md:text-xl mb-4"
+          style={{ fontFamily: 'Merriweather, serif', color: 'white' }}
+        >
+          Founded in 2020 by Kyle Weidemann, a proud graduate of the Wood Tech program at Western Technical College in La Crosse, WI, where he earned honors in 2018. Since then, Kyle has been honing his carpentry skills, delivering quality craftsmanship to all of his projects.
+        </p>
+
         <p
           className="text-lg md:text-xl mb-8"
           style={{ fontFamily: 'Merriweather, serif', color: 'white' }}
@@ -73,6 +81,22 @@ const About = () => {
             className="w-full md:w-1/3 rounded-lg shadow-lg object-contain h-auto max-h-96"
           />
         </div>
+      </div>
+
+      {/* BuilderMember Image */}
+      <div
+        className="relative z-10 mt-8"
+        style={{
+          backgroundColor: blackShadow,
+          padding: '10px',
+          borderRadius: '10px',
+        }}
+      >
+        <img
+          src="/photos/BuilderMember.jpg"
+          alt="Builder Member Logo"
+          className="w-40 md:w-48 mx-auto object-contain"
+        />
       </div>
     </div>
   );
