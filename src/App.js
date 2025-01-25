@@ -12,6 +12,7 @@ import GarageGallery from './galleries/GarageGallery';
 import ProjectManagementGallery from './galleries/ProjectManagementGallery';
 import InteriorGallery from './galleries/InteriorGallery'; // Import InteriorGallery
 
+
 function App() {
   return (
     <Router>
