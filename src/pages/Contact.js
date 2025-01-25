@@ -3,6 +3,11 @@
   method="POST"
   className="bg-gray-800 p-8 rounded-lg shadow-lg"
 >
+  {/* Hidden Fields */}
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_subject" value="New Project Inquiry from Weidemann Construction Website" />
+  <input type="hidden" name="_template" value="table" />
+
   {/* Name Field */}
   <div className="mb-4">
     <label className="block text-white font-semibold mb-2" htmlFor="name">
