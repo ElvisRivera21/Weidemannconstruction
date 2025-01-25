@@ -40,3 +40,5 @@
     </button>
   </div>
 </form>
+
+export default Contact;
