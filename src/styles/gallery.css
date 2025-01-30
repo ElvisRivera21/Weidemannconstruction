@@ -82,8 +82,8 @@
     display: flex;
     width: 200%;
     /* Ensures all images are visible before loop */
-    animation: scroll 120s linear infinite;
-    /* Increased duration */
+    animation: scroll 40s linear infinite;
+    /* Increased speed */
 }
 
 .slideshow-item {
