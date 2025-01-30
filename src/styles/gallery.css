@@ -35,7 +35,40 @@
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
+    }
+
+    /* Adjusted for full image visibility */
+}
+
+.slideshow-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideshow-track {
+    display: flex;
+    width: 200%;
+    /* Dynamic width ensures smooth scrolling */
+    animation: scroll 120s linear infinite;
+    /* Increased duration */
+}
+
+.slideshow-item {
+    flex: 0 0 auto;
+    width: 20vw;
+    /* Adjusted to show more images at once */
+    padding: 0 10px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
     }
 }
 
@@ -47,14 +80,15 @@
 
 .slideshow-track {
     display: flex;
-    width: calc(200%);
-    /* Double width for smooth looping */
-    animation: scroll 30s linear infinite;
+    width: 200%;
+    /* Ensures all images are visible before loop */
+    animation: scroll 120s linear infinite;
+    /* Increased duration */
 }
 
 .slideshow-item {
     flex: 0 0 auto;
-    width: 33.33vw;
-    /* Ensures multiple images are visible at once */
+    width: 20vw;
+    /* Displays multiple images at once */
     padding: 0 10px;
 }

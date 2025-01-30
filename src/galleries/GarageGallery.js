@@ -5,10 +5,11 @@ const GarageGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const goldColor = '#FDB927'; // Matching gold for text and buttons
 
-  // Array of images (for both slideshow & gallery)
+  // Array of images (all images included)
   const images = [
     { src: '/photos/AdditionsPorches/covered1.png', text: 'Three Season Porch' },
-    { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
+    { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Cedar Finish' },
+   
     { src: '/photos/AdditionsPorches/brownCovered1.png', text: 'Covered Deck With Screened In Porch' },
     { src: '/photos/AdditionsPorches/brownCovered2.png', text: 'Covered Deck With A Curved Overhang' },
     { src: '/photos/AdditionsPorches/greaterRoomAddition.png', text: 'Great Room Addition Mid-Construction' },
@@ -17,7 +18,7 @@ const GarageGallery = () => {
     { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Covered Deck Mid-Construction' },
     { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Three Season Room Mid-Construction' },
     { src: '/photos/AdditionsPorches/ThreeSeasonPorches.png', text: 'Three Season Porches' },
-    { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Cedar Finish' },
+    { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
   ];
 
   return (

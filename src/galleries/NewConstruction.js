@@ -3,25 +3,9 @@ import '../styles/gallery.css';
 
 const ResidentialGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const goldColor = '#FDB927';
 
-  const slideshowImages = [
-    '/photos/ResidentialServices/CustomOne.png',
-    '/photos/ResidentialServices/CustomTwo.png',
-    '/photos/ResidentialServices/GreenOne.png',
-    '/photos/ResidentialServices/GreenTwo.png',
-    '/photos/Weedy.png',
-    '/photos/ResidentialServices/RedThree.png',
-    '/photos/ResidentialServices/Trusspic.png',
-    '/photos/ResidentialServices/Generalcontracting.png',
-    '/photos/ResidentialServices/NewConstruction1.png',
-    '/photos/ResidentialServices/NewConstruction2.png',
-    '/photos/ResidentialServices/NewConstruction3.png',
-    '/photos/ResidentialServices/Framing.png',
-    '/photos/ResidentialServices/GreenHouse.png',
-  ];
-
+  // Images for the scrolling slideshow (all images included)
   const images = [
     { src: '/photos/ResidentialServices/CustomOne.png', text: 'Custom Build' },
     { src: '/photos/ResidentialServices/CustomTwo.png', text: 'Custom Build' },
@@ -32,57 +16,25 @@ const ResidentialGallery = () => {
     { src: '/photos/ResidentialServices/Trusspic.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/Generalcontracting.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction1.png', text: 'Custom Home' },
-    { src: '/photos/ResidentialServices/GreenHouse.png', text: 'Custom Home' },
+    { src: '/photos/ResidentialServices/NewConstruction2.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/NewConstruction3.png', text: 'Custom Home' },
     { src: '/photos/ResidentialServices/Framing.png', text: 'Framing' },
+    { src: '/photos/ResidentialServices/GreenHouse.png', text: 'Custom Home' },
   ];
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slideshowImages.length);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? slideshowImages.length - 1 : prevSlide - 1
-    );
-  };
-
-  // Close modal on ESC key press
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setSelectedImage(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
 
   return (
     <div className="bg-black py-16 px-4">
-      {/* Slideshow Section */}
-      <div className="max-w-6xl mx-auto mb-12 relative">
-        <div className="relative h-64">
-          <img
-            src={slideshowImages[currentSlide]}
-            alt={`Slide ${currentSlide + 1}`}
-            className="w-full h-full object-contain rounded-lg"
-          />
-          <button
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-            onClick={handlePrevSlide}
-          >
-            &#10094;
-          </button>
-          <button
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-            onClick={handleNextSlide}
-          >
-            &#10095;
-          </button>
+      {/* Full-Width Scrolling Slideshow */}
+      <div className="slideshow-container overflow-hidden relative w-full h-[400px] mb-12">
+        <div className="slideshow-track">
+          {images.concat(images).map((image, index) => ( // Doubling images for infinite scrolling
+            <div key={index} className="slideshow-item">
+              <img src={image.src} alt={image.text} className="w-full h-[400px] object-cover rounded-lg shadow-md" />
+              <p className="text-center mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
+                {image.text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -95,18 +47,13 @@ const ResidentialGallery = () => {
           Explore our residential construction projects, crafted with precision and quality.
         </p>
 
+        {/* Grid Layout for Images */}
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {images.map(({ src, text }, index) => (
-            <div
-              key={index}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+            <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
               onClick={() => setSelectedImage({ src, text })}
             >
-              <img
-                src={src}
-                alt={text}
-                className="w-full h-48 object-cover rounded-lg"
-              />
+              <img src={src} alt={text} className="w-full h-48 object-cover rounded-lg" />
               <p className="text-sm mt-2" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
                 {text}
               </p>
@@ -128,20 +75,10 @@ const ResidentialGallery = () => {
             </button>
 
             {/* Enlarged Image */}
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.text}
-              className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
-            />
+            <img src={selectedImage.src} alt={selectedImage.text} className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg" />
 
             {/* Image Description */}
-            <p
-              className="text-lg mt-4 text-center"
-              style={{
-                color: goldColor,
-                fontFamily: 'Merriweather, serif',
-              }}
-            >
+            <p className="text-lg mt-4 text-center" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
               {selectedImage.text}
             </p>
           </div>

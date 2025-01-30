@@ -3,10 +3,9 @@ import '../styles/gallery.css';
 
 const ExteriorFinishesGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const goldColor = '#FDB927';
 
-  // Array of images for the exterior finishes gallery
+  // Array of images (All images now included in the slideshow)
   const images = [
     { src: '/photos/ExteriorFinishes/Curved.png', caption: 'Unique LP SmartSide Design' },
     { src: '/photos/ExteriorFinishes/door1.png', caption: 'Quality Door Installations' },
@@ -21,93 +20,39 @@ const ExteriorFinishesGallery = () => {
     { src: '/photos/AdditionsPorches/overPatio.png', caption: 'Maintenance Free Decks/Railings' },
   ];
 
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? images.length - 1 : prevSlide - 1
-    );
-  };
-
-  // Close modal on ESC key press
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setSelectedImage(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
   return (
     <div className="bg-black py-16 px-4">
-      {/* Slideshow Section */}
-      <div className="max-w-6xl mx-auto mb-12 relative">
-        <div className="relative h-64">
-          <img
-            src={images[currentSlide].src}
-            alt={images[currentSlide].caption}
-            className="w-full h-full object-contain rounded-lg"
-          />
-          <button
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-            onClick={handlePrevSlide}
-          >
-            &#10094;
-          </button>
-          <button
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-            onClick={handleNextSlide}
-          >
-            &#10095;
-          </button>
+      {/* Full-Width Scrolling Slideshow */}
+      <div className="slideshow-container overflow-hidden relative w-full h-[400px] mb-12">
+        <div className="slideshow-track">
+          {images.concat(images).map((image, index) => ( // Doubling images for infinite scrolling
+            <div key={index} className="slideshow-item">
+              <img src={image.src} alt={image.caption} className="w-full h-[400px] object-cover rounded-lg shadow-md" />
+              <p className="text-center mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
+                {image.caption}
+              </p>
+            </div>
+          ))}
         </div>
-        <p
-          className="text-center mt-4"
-          style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-        >
-          {images[currentSlide].caption}
-        </p>
       </div>
 
+      {/* Gallery Section */}
       <div className="max-w-6xl mx-auto text-center">
-        {/* Gallery Title */}
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-8"
-          style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
-        >
+        <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: 'Cinzel, serif', color: goldColor }}>
           Exterior Finishes Gallery
         </h2>
-        <p
-          className="text-lg mb-8"
-          style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-        >
+        <p className="text-lg mb-8" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
           Explore our variety of exterior finishes designed to impress and last.
         </p>
 
         {/* Grid Layout for Images */}
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {images.map((item, index) => (
-            <div
-              key={index}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-              onClick={() => setSelectedImage(item)} // Open modal
+            <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+              onClick={() => setSelectedImage(item)}
             >
-              <img
-                src={item.src}
-                alt={item.caption}
-                className="w-full h-48 object-cover rounded-lg"
-              />
-              <p
-                className="mt-2 text-sm"
-                style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-              >
+              <img src={item.src} alt={item.caption} className="w-full h-48 object-cover rounded-lg" />
+              <p className="mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
                 {item.caption}
               </p>
             </div>
@@ -128,20 +73,10 @@ const ExteriorFinishesGallery = () => {
             </button>
 
             {/* Enlarged Image */}
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.caption}
-              className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
-            />
+            <img src={selectedImage.src} alt={selectedImage.caption} className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg" />
 
             {/* Image Description */}
-            <p
-              className="text-lg mt-4 text-center"
-              style={{
-                color: goldColor,
-                fontFamily: 'Merriweather, serif',
-              }}
-            >
+            <p className="text-lg mt-4 text-center" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
               {selectedImage.caption}
             </p>
           </div>

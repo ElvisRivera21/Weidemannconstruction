@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/gallery.css';
 
 const InteriorGallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-    const [currentSlide, setCurrentSlide] = useState(0);
     const goldColor = '#F6B817'; // Matching gold for text and buttons
 
     const images = [
@@ -19,80 +19,29 @@ const InteriorGallery = () => {
         { src: '/photos/ShadyPine/FullBathroomRemodel.png', text: 'Full Bathroom Remodel' },
     ];
 
-    const handleNextSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-    };
-
-    const handlePrevSlide = () => {
-        setCurrentSlide((prevSlide) =>
-            prevSlide === 0 ? images.length - 1 : prevSlide - 1
-        );
-    };
-
-    // Close modal on ESC key press
-    useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.key === 'Escape') {
-                setSelectedImage(null);
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, []);
-
     return (
         <div className="bg-black py-16 px-4 text-center">
-            {/* Slideshow Section */}
-            <div className="max-w-6xl mx-auto mb-12 relative">
-                <div className="relative h-64">
-                    <img
-                        src={images[currentSlide].src}
-                        alt={images[currentSlide].text}
-                        className="w-full h-full object-contain rounded-lg"
-                    />
-                    <button
-                        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-                        onClick={handlePrevSlide}
-                    >
-                        &#10094;
-                    </button>
-                    <button
-                        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-                        onClick={handleNextSlide}
-                    >
-                        &#10095;
-                    </button>
+            {/* Full-Width Scrolling Slideshow */}
+            <div className="slideshow-container overflow-hidden relative w-full h-[400px] mb-12">
+                <div className="slideshow-track">
+                    {images.concat(images).map((image, index) => ( // Doubled for smooth infinite scrolling
+                        <div key={index} className="slideshow-item">
+                            <img src={image.src} alt={image.text} className="w-full h-[400px] object-cover rounded-lg shadow-md" />
+                            <p className="text-center mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
+                                {image.text}
+                            </p>
+                        </div>
+                    ))}
                 </div>
-                <p
-                    className="text-center mt-4"
-                    style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-                >
-                    {images[currentSlide].text}
-                </p>
             </div>
 
             {/* Gallery Title */}
-            <h2
-                className="text-3xl md:text-4xl font-bold mb-8"
-                style={{
-                    fontFamily: 'Cinzel, serif',
-                    color: goldColor,
-                }}
-            >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: 'Cinzel, serif', color: goldColor }}>
                 Interior Gallery
             </h2>
 
             {/* Subtitle */}
-            <p
-                className="text-lg mb-8"
-                style={{
-                    fontFamily: 'Merriweather, serif',
-                    color: goldColor,
-                }}
-            >
+            <p className="text-lg mb-8" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
                 Explore our stunning interior designs, crafted for beauty and functionality.
             </p>
 
@@ -104,19 +53,9 @@ const InteriorGallery = () => {
                             className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                             onClick={() => setSelectedImage({ src, text })}
                         >
-                            <img
-                                src={src}
-                                alt={text}
-                                className="w-full h-48 object-cover rounded-lg"
-                            />
+                            <img src={src} alt={text} className="w-full h-48 object-cover rounded-lg" />
                         </div>
-                        <p
-                            className="mt-2 text-sm font-semibold"
-                            style={{
-                                fontFamily: 'Merriweather, serif',
-                                color: goldColor,
-                            }}
-                        >
+                        <p className="mt-2 text-sm font-semibold" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
                             {text}
                         </p>
                     </div>
@@ -136,20 +75,10 @@ const InteriorGallery = () => {
                         </button>
 
                         {/* Enlarged Image */}
-                        <img
-                            src={selectedImage.src}
-                            alt={selectedImage.text}
-                            className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
-                        />
+                        <img src={selectedImage.src} alt={selectedImage.text} className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg" />
 
                         {/* Image Description */}
-                        <p
-                            className="text-lg mt-4 text-center"
-                            style={{
-                                color: goldColor,
-                                fontFamily: 'Merriweather, serif',
-                            }}
-                        >
+                        <p className="text-lg mt-4 text-center" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
                             {selectedImage.text}
                         </p>
                     </div>
