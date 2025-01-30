@@ -15,19 +15,15 @@ const Services = () => {
       description:
         'We provide quality residential construction services tailored to your needs. From custom homes to detached garages and new buildings.',
       image: 'photos/ResidentialServices/NewConstruction2.png',
-      route: '/gallery/residential', // Route path for the residential gallery
+      route: '/gallery/residential',
     },
     {
       icon: <FaHardHat size={40} className="text-[#FDB927] mb-4" />,
-      title: (
-        <>
-          Additions & Porches 
-        </>
-      ),
+      title: 'Additions & Porches',
       description:
         'Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms, we bring your vision to life while adding value to your home.',
       image: 'photos/AdditionsPorches/covered2.png',
-      route: '/gallery/garage', // Route path for the garage gallery
+      route: '/gallery/garage',
     },
     {
       icon: <FaTruckMoving size={40} className="text-[#FDB927] mb-4" />,
@@ -35,15 +31,15 @@ const Services = () => {
       description:
         'Transform your home with top-quality siding, soffit/fascia, windows, and stylish decks or pergolas. Durable solutions built to last.',
       image: 'photos/GarageServices/GarageServicesCover.png',
-      route: '/gallery/project-management', // Route path for the project management gallery
+      route: '/gallery/project-management',
     },
     {
-      icon: <FaCouch size={40} className="text-[#FDB927] mb-4" />, // New icon for Interior Gallery
+      icon: <FaCouch size={40} className="text-[#FDB927] mb-4" />,
       title: 'Interior Gallery',
       description:
         'Explore our stunning interior projects, from doors & windows to kitchen cabinetry and everything in between.',
-      image: 'photos/ShadyPine/Island1.png', // Replace with actual interior gallery image
-      route: '/gallery/interior', // Route path for the interior gallery
+      image: 'photos/ShadyPine/Island1.png',
+      route: '/gallery/interior',
     },
   ];
 
@@ -59,7 +55,7 @@ const Services = () => {
     'Siding',
     'Decks and Pergolas',
     'Garages',
-    'Interiors', // Added "Interiors" for alignment with the Interior Gallery
+    'Interiors',
   ];
 
   return (
@@ -93,8 +89,8 @@ const Services = () => {
           including architectural plans and designs for your project, as well as general contracting.
         </p>
 
-        {/* Grid Layout for Services */}
-        <div className="grid gap-8 md:grid-cols-3">
+        {/* Grid Layout for Services - FIXED TO SHOW ALL CARDS IN ONE ROW */}
+        <div className="grid gap-8 md:grid-cols-4">
           {services.map((service, index) => (
             <div
               key={index}
@@ -107,7 +103,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-64 object-contain rounded-md mb-4" // Ensure the whole image fits
+                    className="w-full h-64 object-contain rounded-md mb-4"
                   />
                 )}
                 {/* Service Icon */}
@@ -120,10 +116,7 @@ const Services = () => {
                   {service.title}
                 </h3>
                 {/* Service Description */}
-                <p
-                  className="text-white"
-                  style={{ fontFamily: 'Merriweather, serif' }}
-                >
+                <p className="text-white" style={{ fontFamily: 'Merriweather, serif' }}>
                   {service.description}
                 </p>
               </div>
