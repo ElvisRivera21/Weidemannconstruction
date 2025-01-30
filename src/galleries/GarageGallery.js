@@ -5,7 +5,7 @@ const GarageGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const goldColor = '#FDB927'; // Matching gold for text and buttons
 
-  // Array of images for the slideshow and gallery
+  // Array of images (for both slideshow & gallery)
   const images = [
     { src: '/photos/AdditionsPorches/covered1.png', text: 'Three Season Porch' },
     { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
@@ -22,16 +22,12 @@ const GarageGallery = () => {
 
   return (
     <div className="bg-black py-16 px-4">
-      {/* Slideshow Section - Full Width Scrolling */}
-      <div className="overflow-hidden relative w-full h-[400px] mb-12">
-        <div className="flex whitespace-nowrap animate-scroll">
-          {images.concat(images).map((image, index) => ( // Doubled for infinite loop effect
-            <div key={index} className="flex-shrink-0 w-[33.33%] px-2">
-              <img
-                src={image.src}
-                alt={image.text}
-                className="w-full h-[400px] object-cover rounded-lg shadow-md"
-              />
+      {/* Full-width Scrolling Slideshow */}
+      <div className="slideshow-container overflow-hidden relative w-full h-[400px] mb-12">
+        <div className="slideshow-track">
+          {images.concat(images).map((image, index) => ( // Doubled for smooth infinite scrolling
+            <div key={index} className="slideshow-item">
+              <img src={image.src} alt={image.text} className="w-full h-[400px] object-cover rounded-lg shadow-md" />
               <p className="text-center mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
                 {image.text}
               </p>
@@ -47,18 +43,13 @@ const GarageGallery = () => {
           Additions & Porches Gallery
         </h2>
         <p className="text-lg mb-8" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
-          Expand your living space with Weidemann Construction. From cozy three-season porches to
-          additional rooms, we bring your vision to life while adding value to your home.
+          Expand your living space with Weidemann Construction. From cozy three-season porches to additional rooms, we bring your vision to life while adding value to your home.
         </p>
 
         {/* Grid Layout for Images */}
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {images.map((image, index) => (
-            <div
-              key={index}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-              onClick={() => setSelectedImage(image)}
-            >
+            <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage(image)}>
               <img src={image.src} alt={image.text} className="w-full h-48 object-cover rounded-lg" />
               <p className="mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
                 {image.text}
