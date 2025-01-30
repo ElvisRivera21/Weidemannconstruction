@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const InteriorGallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-    const [currentSlide, setCurrentSlide] = useState(0); // State for the slideshow
-
+    const [currentSlide, setCurrentSlide] = useState(0);
     const goldColor = '#F6B817'; // Matching gold for text and buttons
 
     const images = [
@@ -29,6 +28,20 @@ const InteriorGallery = () => {
             prevSlide === 0 ? images.length - 1 : prevSlide - 1
         );
     };
+
+    // Close modal on ESC key press
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                setSelectedImage(null);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     return (
         <div className="bg-black py-16 px-4 text-center">
@@ -89,15 +102,12 @@ const InteriorGallery = () => {
                     <div key={index} className="text-center">
                         <div
                             className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                            style={{
-                                aspectRatio: '4 / 3', // Maintain aspect ratio for each container
-                            }}
                             onClick={() => setSelectedImage({ src, text })}
                         >
                             <img
                                 src={src}
                                 alt={text}
-                                className="w-full h-full object-cover"
+                                className="w-full h-48 object-cover rounded-lg"
                             />
                         </div>
                         <p
@@ -113,36 +123,35 @@ const InteriorGallery = () => {
                 ))}
             </div>
 
-            {/* Modal for Selected Image */}
+            {/* Modal for Enlarged Image Preview */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg p-4 shadow-lg max-w-lg mx-auto">
+                <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+                    <div className="relative max-w-4xl w-full px-4">
+                        {/* Close button */}
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-6 right-8 bg-[#F6B817] text-black text-lg font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300"
+                        >
+                            ✕ Close
+                        </button>
+
+                        {/* Enlarged Image */}
                         <img
                             src={selectedImage.src}
                             alt={selectedImage.text}
-                            className="w-full rounded-lg"
+                            className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
                         />
+
+                        {/* Image Description */}
                         <p
-                            className="text-lg mt-4"
+                            className="text-lg mt-4 text-center"
                             style={{
-                                fontFamily: 'Cinzel, serif',
                                 color: goldColor,
-                                textAlign: 'center',
+                                fontFamily: 'Merriweather, serif',
                             }}
                         >
                             {selectedImage.text}
                         </p>
-                        <button
-                            onClick={() => setSelectedImage(null)}
-                            className="mt-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600 transition"
-                            style={{
-                                fontFamily: 'Merriweather, serif',
-                                backgroundColor: goldColor,
-                                color: 'black',
-                            }}
-                        >
-                            Close
-                        </button>
                     </div>
                 </div>
             )}

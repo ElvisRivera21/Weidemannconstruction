@@ -1,27 +1,24 @@
-// src/galleries/GarageGallery.js
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/gallery.css';
 
 const GarageGallery = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); // State for the slideshow
-  const goldColor = '#FDB927'; // Updated to the new yellow color
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const goldColor = '#FDB927'; // Matching gold for text and buttons
 
-  // Array of images for the garage gallery
+  // Array of images for the additions & porches gallery
   const images = [
     { src: '/photos/AdditionsPorches/covered1.png', text: 'Three Season Porch' },
     { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
-    
     { src: '/photos/AdditionsPorches/brownCovered1.png', text: 'Covered Deck With Screened In Porch' },
     { src: '/photos/AdditionsPorches/brownCovered2.png', text: 'Covered Deck With A Curved Overhang' },
     { src: '/photos/AdditionsPorches/greaterRoomAddition.png', text: 'Great Room Addition Mid-Construction' },
-    { src: '/photos/AdditionsPorches/greaterRoomAddition1.png', text: 'Great Room Addition Before/After ' },
+    { src: '/photos/AdditionsPorches/greaterRoomAddition1.png', text: 'Great Room Addition Before/After' },
     { src: '/photos/AdditionsPorches/LeanRoof.png', text: 'Lean-To Roof With Speakers & Lights' },
     { src: '/photos/AdditionsPorches/maintenancePatio.png', text: 'Covered Deck Mid-Construction' },
     { src: '/photos/AdditionsPorches/threeSeason.png', text: 'Three Season Room Mid-Construction' },
-    
     { src: '/photos/AdditionsPorches/ThreeSeasonPorches.png', text: 'Three Season Porches' },
-    { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Ceader Finish' },
+    { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Cedar Finish' },
   ];
 
   const handleNextSlide = () => {
@@ -33,6 +30,20 @@ const GarageGallery = () => {
       prevSlide === 0 ? images.length - 1 : prevSlide - 1
     );
   };
+
+  // Close modal on ESC key press
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className="bg-black py-16 px-4">
@@ -87,12 +98,13 @@ const GarageGallery = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+              onClick={() => setSelectedImage(image)}
             >
               <img
                 src={image.src}
                 alt={image.text}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover rounded-lg"
               />
               <p
                 className="mt-2 text-sm"
@@ -104,6 +116,39 @@ const GarageGallery = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal for Enlarged Image Preview */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+          <div className="relative max-w-4xl w-full px-4">
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-8 bg-[#FDB927] text-black text-lg font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300"
+            >
+              ✕ Close
+            </button>
+
+            {/* Enlarged Image */}
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.text}
+              className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
+            />
+
+            {/* Image Description */}
+            <p
+              className="text-lg mt-4 text-center"
+              style={{
+                color: goldColor,
+                fontFamily: 'Merriweather, serif',
+              }}
+            >
+              {selectedImage.text}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

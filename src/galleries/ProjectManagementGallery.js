@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/gallery.css';
 
 const ExteriorFinishesGallery = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); // State for the slideshow
-  const goldColor = '#FDB927'; // Updated to the new yellow color
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const goldColor = '#FDB927';
 
   // Array of images for the exterior finishes gallery
   const images = [
@@ -16,8 +17,8 @@ const ExteriorFinishesGallery = () => {
     { src: '/photos/ExteriorFinishes/GreenExterior.png', caption: 'Cabin Fever' },
     { src: '/photos/ExteriorFinishes/BBQ.png', caption: 'Outdoor BBQ Pit' },
     { src: '/photos/ExteriorFinishes/CustomGarage.png', caption: 'Custom Garage' },
-    { src: '/photos/AdditionsPorches/alumDeck.png', text: 'Deck With Aluminum Railings' },
-    { src: '/photos/AdditionsPorches/overPatio.png', text: 'Maintenance Free Decks/Railings' },
+    { src: '/photos/AdditionsPorches/alumDeck.png', caption: 'Deck With Aluminum Railings' },
+    { src: '/photos/AdditionsPorches/overPatio.png', caption: 'Maintenance Free Decks/Railings' },
   ];
 
   const handleNextSlide = () => {
@@ -29,6 +30,20 @@ const ExteriorFinishesGallery = () => {
       prevSlide === 0 ? images.length - 1 : prevSlide - 1
     );
   };
+
+  // Close modal on ESC key press
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className="bg-black py-16 px-4">
@@ -81,12 +96,13 @@ const ExteriorFinishesGallery = () => {
           {images.map((item, index) => (
             <div
               key={index}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+              onClick={() => setSelectedImage(item)} // Open modal
             >
               <img
                 src={item.src}
                 alt={item.caption}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover rounded-lg"
               />
               <p
                 className="mt-2 text-sm"
@@ -98,6 +114,39 @@ const ExteriorFinishesGallery = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal for Enlarged Image Preview */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+          <div className="relative max-w-4xl w-full px-4">
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-8 bg-[#FDB927] text-black text-lg font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300"
+            >
+              ✕ Close
+            </button>
+
+            {/* Enlarged Image */}
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.caption}
+              className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
+            />
+
+            {/* Image Description */}
+            <p
+              className="text-lg mt-4 text-center"
+              style={{
+                color: goldColor,
+                fontFamily: 'Merriweather, serif',
+              }}
+            >
+              {selectedImage.caption}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
