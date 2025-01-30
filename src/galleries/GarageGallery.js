@@ -3,10 +3,9 @@ import '../styles/gallery.css';
 
 const GarageGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const goldColor = '#FDB927'; // Matching gold for text and buttons
 
-  // Array of images for the additions & porches gallery
+  // Array of images for the slideshow and gallery
   const images = [
     { src: '/photos/AdditionsPorches/covered1.png', text: 'Three Season Porch' },
     { src: '/photos/AdditionsPorches/covered2.png', text: 'Three Season Porch' },
@@ -21,74 +20,33 @@ const GarageGallery = () => {
     { src: '/photos/AdditionsPorches/CeaderFinish.png', text: 'Cedar Finish' },
   ];
 
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? images.length - 1 : prevSlide - 1
-    );
-  };
-
-  // Close modal on ESC key press
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setSelectedImage(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
   return (
     <div className="bg-black py-16 px-4">
-      {/* Slideshow Section */}
-      <div className="max-w-6xl mx-auto mb-12 relative">
-        <div className="relative h-64">
-          <img
-            src={images[currentSlide].src}
-            alt={images[currentSlide].text}
-            className="w-full h-full object-contain rounded-lg"
-          />
-          <button
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-            onClick={handlePrevSlide}
-          >
-            &#10094;
-          </button>
-          <button
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-75"
-            onClick={handleNextSlide}
-          >
-            &#10095;
-          </button>
+      {/* Slideshow Section - Full Width Scrolling */}
+      <div className="overflow-hidden relative w-full h-[400px] mb-12">
+        <div className="flex whitespace-nowrap animate-scroll">
+          {images.concat(images).map((image, index) => ( // Doubled for infinite loop effect
+            <div key={index} className="flex-shrink-0 w-[33.33%] px-2">
+              <img
+                src={image.src}
+                alt={image.text}
+                className="w-full h-[400px] object-cover rounded-lg shadow-md"
+              />
+              <p className="text-center mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
+                {image.text}
+              </p>
+            </div>
+          ))}
         </div>
-        <p
-          className="text-center mt-4"
-          style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-        >
-          {images[currentSlide].text}
-        </p>
       </div>
 
       {/* Gallery Section */}
       <div className="max-w-6xl mx-auto text-center">
         {/* Gallery Title */}
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-8"
-          style={{ fontFamily: 'Cinzel, serif', color: goldColor }}
-        >
+        <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: 'Cinzel, serif', color: goldColor }}>
           Additions & Porches Gallery
         </h2>
-        <p
-          className="text-lg mb-8"
-          style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-        >
+        <p className="text-lg mb-8" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
           Expand your living space with Weidemann Construction. From cozy three-season porches to
           additional rooms, we bring your vision to life while adding value to your home.
         </p>
@@ -101,15 +59,8 @@ const GarageGallery = () => {
               className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
               onClick={() => setSelectedImage(image)}
             >
-              <img
-                src={image.src}
-                alt={image.text}
-                className="w-full h-48 object-cover rounded-lg"
-              />
-              <p
-                className="mt-2 text-sm"
-                style={{ fontFamily: 'Merriweather, serif', color: goldColor }}
-              >
+              <img src={image.src} alt={image.text} className="w-full h-48 object-cover rounded-lg" />
+              <p className="mt-2 text-sm" style={{ fontFamily: 'Merriweather, serif', color: goldColor }}>
                 {image.text}
               </p>
             </div>
@@ -130,20 +81,10 @@ const GarageGallery = () => {
             </button>
 
             {/* Enlarged Image */}
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.text}
-              className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
-            />
+            <img src={selectedImage.src} alt={selectedImage.text} className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg" />
 
             {/* Image Description */}
-            <p
-              className="text-lg mt-4 text-center"
-              style={{
-                color: goldColor,
-                fontFamily: 'Merriweather, serif',
-              }}
-            >
+            <p className="text-lg mt-4 text-center" style={{ color: goldColor, fontFamily: 'Merriweather, serif' }}>
               {selectedImage.text}
             </p>
           </div>
