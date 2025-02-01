@@ -62,6 +62,76 @@ const Contact = () => {
             />
           </div>
 
+          {/* Phone Number Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="phone">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          {/* Project Type Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="projectType">
+              Project Type
+            </label>
+            <select
+              id="projectType"
+              name="projectType"
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+            >
+              <option value="">Select Project Type</option>
+              <option value="New Construction">New Construction</option>
+              <option value="Remodeling">Remodeling</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Siding">Siding</option>
+              <option value="Decks & Patios">Decks & Patios</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          {/* Budget Range Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="budget">
+              Estimated Budget
+            </label>
+            <select
+              id="budget"
+              name="budget"
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+            >
+              <option value="">Select Budget Range</option>
+              <option value="Under $10,000">Under $10,000</option>
+              <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+              <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+              <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+              <option value="Over $100,000">Over $100,000</option>
+            </select>
+          </div>
+
+          {/* Project Details Message Field */}
+          <div className="mb-4">
+            <label className="block text-white font-semibold mb-2" htmlFor="message">
+              Project Details
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Describe your project details..."
+            />
+          </div>
+
           {/* Submit Button */}
           <div className="text-center">
             <button
