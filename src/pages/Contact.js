@@ -77,15 +77,14 @@ const Contact = () => {
             />
           </div>
 
-          {/* Project Type Field */}
+          {/* Project Type Field (Optional) */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="projectType">
-              Project Type
+              Project Type (Optional)
             </label>
             <select
               id="projectType"
               name="projectType"
-              required
               className="w-full p-2 border border-gray-300 rounded-md"
             >
               <option value="">Select Project Type</option>
@@ -98,15 +97,14 @@ const Contact = () => {
             </select>
           </div>
 
-          {/* Budget Range Field */}
+          {/* Budget Range Field (Optional) */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="budget">
-              Estimated Budget
+              Estimated Budget (Optional)
             </label>
             <select
               id="budget"
               name="budget"
-              required
               className="w-full p-2 border border-gray-300 rounded-md"
             >
               <option value="">Select Budget Range</option>
@@ -118,15 +116,14 @@ const Contact = () => {
             </select>
           </div>
 
-          {/* Project Details Message Field */}
+          {/* Project Details Message Field (Optional) */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="message">
-              Project Details
+              Project Details (Optional)
             </label>
             <textarea
               id="message"
               name="message"
-              required
               className="w-full p-2 border border-gray-300 rounded-md"
               placeholder="Describe your project details..."
             />
