@@ -100,7 +100,7 @@ const Contact = () => {
           {/* Budget Range Field (Optional) */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="budget">
-              Estimated Budget (Optional)
+              Estimated Budget 
             </label>
             <select
               id="budget"
@@ -119,7 +119,7 @@ const Contact = () => {
           {/* Project Details Message Field (Optional) */}
           <div className="mb-4">
             <label className="block text-white font-semibold mb-2" htmlFor="message">
-              Project Details (Optional)
+              Project Details 
             </label>
             <textarea
               id="message"
