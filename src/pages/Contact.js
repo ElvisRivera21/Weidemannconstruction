@@ -11,7 +11,7 @@
   {/* Full Name Field */}
   <div className="mb-4">
     <label className="block text-white font-semibold mb-2" htmlFor="name">
-      Full Name
+      Full Names
     </label>
     <input
       type="text"
